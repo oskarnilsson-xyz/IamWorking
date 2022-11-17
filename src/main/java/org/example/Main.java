@@ -5,5 +5,6 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         var splash = new Splashpage();
+        Settings setWindow = new Settings();
     }
 }
