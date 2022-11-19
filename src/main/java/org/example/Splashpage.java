@@ -18,4 +18,5 @@ public Splashpage(){
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     setVisible(true);
 }
+
 }
