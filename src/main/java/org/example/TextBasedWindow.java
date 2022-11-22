@@ -5,6 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.*;
 
 public class TextBasedWindow extends JFrame {
 
@@ -14,11 +18,26 @@ public class TextBasedWindow extends JFrame {
     private JButton uploadFileButton;
     private JButton enterTextButton;
 
-    String textToLoad = "\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"";
-
+    // Text generation variables
     char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
     int generationSpeed = 10; // Antalet tecken som ska generaras vid varje knapptryckning
     int count = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
+
+    // File-handling
+    public static String readFileAsString(String fileName){
+        try {
+            String data = "";
+            data = new String(Files.readAllBytes(Paths.get(fileName)));
+            return data;
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    String defaultText = readFileAsString("src/main/resources/files/defaultText");  // A default text to generate from
+    String textToLoad = defaultText; // Todo: Add logic to determine what to generate text from(Default, uploaded file, etc)
 
 
     public TextBasedWindow() {
