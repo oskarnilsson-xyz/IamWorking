@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.awt.*;
 
 
-public class Settings extends JFrame implements ActionListener{
+public class Settings extends JFrame implements ActionListener,FileReadWrite{
     private JPanel mainPanel;
     private JPanel center;
     private JPanel bottom;
@@ -32,6 +32,7 @@ public class Settings extends JFrame implements ActionListener{
         pinkButton.addActionListener(this);
         blackButton.addActionListener(this);
         whiteButton.addActionListener(this);
+
 
     }
 
@@ -72,6 +73,7 @@ public class Settings extends JFrame implements ActionListener{
 
     }
 
+
     private void initializer() {// basic fakta för fönster
         setContentPane(mainPanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
@@ -79,6 +81,12 @@ public class Settings extends JFrame implements ActionListener{
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 
+    }
+
+    public String ReadConfig(String filename, String value){
+
+
+        return FileRead(filename, value);
     }
 
 }

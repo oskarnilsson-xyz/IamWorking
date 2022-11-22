@@ -1,0 +1,17 @@
+backgroundcolor="Pink"
+textColor="Red"
+textSize="12"
+font="Arial"
+speed="10"
+currentFileText="fox11.txt"
+currentFileGraphics="fox22.txt"
+settingsFile="src/main/resources/Config"
+
+-------------
+BackgroundcolorOptions="Purple", "Black", "White"
+TextColor "Red", "Green", "Black", "White"
+TextSize "10", "12", "14", "16", "18", "20"
+Font "Arial", "Times New Roman", "Source Code Pro"
+Speed "1", "3", "6", "8", "10"
+FileText "fox11.txt", "fox12.txt", "fox13.txt"
+FileGraphic "fox21.txt", "fox22.txt", "fox23.txt"
