@@ -22,7 +22,7 @@ public class Settings extends JFrame implements ActionListener{
 
     //String[] comboOptions = {"file1", "file2", "file3"};
 
-    ImageIcon foxImage = new ImageIcon("fox.png"); // lade till en icon till våra fönster
+    ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till våra fönster
 
     public Settings(){// konstruktor
         initializer();// method som innehåller saker vi vill ha till våra fönster

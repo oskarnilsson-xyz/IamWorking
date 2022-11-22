@@ -6,7 +6,7 @@ import java.awt.event.MouseEvent;
 
 public class Splashpage extends JFrame{
 
-    ImageIcon foxImage = new ImageIcon("fox.png"); // lade till en icon till vårt fönster
+    ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
 
     private JPanel splashPagePanel;
     private JButton textInterfaceButton;
@@ -28,7 +28,8 @@ public Splashpage(){
             super.mouseReleased(textInterfaceSelected);
 
             //Open settings window by creating an object of target frame.
-
+            TextBasedWindow textBasedWindow = new TextBasedWindow();
+            Settings settingsWindow = new Settings();
             dispose();
         }
     });
@@ -38,7 +39,7 @@ public Splashpage(){
             super.mouseReleased(graphicInterfaceSelected);
 
             //Open settings window by creating an object of target frame.
-
+            GraphicInterface graphicInterfaceWindow = new GraphicInterface();
             dispose();
         }
     });
