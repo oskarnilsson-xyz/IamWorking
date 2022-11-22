@@ -1,10 +1,8 @@
 package org.example;
-
 import javax.swing.*;
-
 public class Main {
     public static void main(String[] args) {
-
-        Settings setWindow = new Settings();
+        var TextBasedWindow = new TextBasedWindow();
+        System.out.println("Greetings, friends!");
     }
 }
