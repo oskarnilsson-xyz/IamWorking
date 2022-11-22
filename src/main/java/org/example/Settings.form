@@ -21,7 +21,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="7d7ea" class="javax.swing.JComboBox">
+          <component id="7d7ea" class="javax.swing.JComboBox" binding="fileSelect">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -29,6 +29,11 @@
               <background color="-1510405"/>
               <font name="Source Code Pro"/>
               <foreground color="-15395563"/>
+              <model>
+                <item value="File 1"/>
+                <item value="File 2"/>
+                <item value="File 3"/>
+              </model>
             </properties>
           </component>
           <component id="5c968" class="javax.swing.JLabel" binding="label1">
@@ -121,31 +126,28 @@
               <text value="CheckBox"/>
             </properties>
           </component>
-          <component id="9e4bf" class="javax.swing.JCheckBox" binding="checkBox5" default-binding="true">
+          <component id="ae85c" class="javax.swing.JButton" binding="pinkButton" default-binding="true">
             <constraints>
-              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-3023902"/>
-              <text value="CheckBox"/>
+              <text value="Pink"/>
             </properties>
           </component>
-          <component id="9ac1e" class="javax.swing.JCheckBox" binding="checkBox1" default-binding="true">
+          <component id="c7a83" class="javax.swing.JButton" binding="blackButton" default-binding="true">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-3023902"/>
-              <text value="CheckBox"/>
+              <text value="Black"/>
             </properties>
           </component>
-          <component id="a4cc1" class="javax.swing.JCheckBox" binding="checkBox6" default-binding="true">
+          <component id="2ea59" class="javax.swing.JButton" binding="whiteButton" default-binding="true">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-3023902"/>
-              <text value="CheckBox"/>
+              <text value="White"/>
             </properties>
           </component>
         </children>
