@@ -125,8 +125,14 @@ public class Settings extends JFrame implements ActionListener,FileReadWrite{
         setVisible(true);
 
     }
-    public String ReadConfig(String filename, String value){
+
+
+    public String ReadConfig(String filename, String settingType){
+
         //ReadConfig("src/main/resources/Config", "BackgroundcolorOptions")//struktur för att kalla informationen
-        return FileRead(filename, value);
+        return FileRead(filename, settingType);
+    }
+    public void WriteConfig(String fileName, String settingType, String writeValue){
+        FileWrite(fileName, settingType, writeValue);
     }
 }
