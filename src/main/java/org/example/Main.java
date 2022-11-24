@@ -3,9 +3,8 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         //var TextBasedWindow = new TextBasedWindow();
-        //var splashPage = new Splashpage();
-        Settings settings = new Settings();
+        var splashPageWindow = new Splashpage();
+        Settings settingsWindow = new Settings();
 
-        System.out.println(settings.ReadConfig("src/main/resources/Config", "BackgroundcolorOptions"));
     }
 }
