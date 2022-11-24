@@ -18,12 +18,8 @@ public class TextBasedWindow extends JFrame {
     private JButton uploadFileButton;
     private JButton enterTextButton;
 
-    // Text generation variables
-    char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
-    int generationSpeed = 10; // Antalet tecken som ska generaras vid varje knapptryckning
-    int count = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
 
-    // File-handling
+    // File-handling for default file
     public static String readFileAsString(String fileName){
         try {
             String data = "";
@@ -39,6 +35,10 @@ public class TextBasedWindow extends JFrame {
     String defaultText = readFileAsString("src/main/resources/files/defaultText");  // A default text to generate from
     String textToLoad = defaultText; // Todo: Add logic to determine what to generate text from(Default, uploaded file, etc)
 
+    // Text generation variables
+    char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
+    int generationSpeed = 10; // Antalet tecken som ska generaras vid varje knapptryckning
+    int count = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
 
     public TextBasedWindow() {
         setContentPane(panel1);
@@ -54,7 +54,8 @@ public class TextBasedWindow extends JFrame {
         goToSettingsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("In the future, this button will take you to settings.");
+                Settings settings = new Settings(); // Todo: Should any values be sent to settings window?
+                dispose(); // Closes window
             }
         });
         uploadFileButton.addActionListener(new ActionListener() {
@@ -78,9 +79,7 @@ public class TextBasedWindow extends JFrame {
                    Vi gör om våran array of char(characters) till en sträng.
                    Sedan letar vi efter vilken plats(index) i våran sträng som tecknet för våran knapptryckning har.
                    Om den inte hittar tecknet i våran sträng så returnerar den -1, så vi behöver bara kolla resultat är lika med eller större än index 0.
-                   På så sätt kan vi generera text vid knapptryckning endast med de tecken som vi vill ska vara giltiga, vilket vi definerar i keyInputs
-                 */
-
+                   På så sätt kan vi generera text vid knapptryckning endast med de tecken som vi vill ska vara giltiga, vilket vi definerar i keyInputs */
                 if (new String(keyInputs).indexOf(e.getKeyChar()) >= 0) {
                     System.out.println(e.getKeyChar());
                     count++;
