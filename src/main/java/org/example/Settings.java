@@ -7,7 +7,7 @@ import java.awt.event.*;
 import java.awt.*;
 
 
-public class Settings extends JFrame implements ActionListener,FileReadWrite{
+public class Settings extends JFrame implements ActionListener, ConfigReadWrite {
     private JPanel mainPanel;
     private JPanel center;
     private JPanel bottom;
@@ -39,6 +39,8 @@ public class Settings extends JFrame implements ActionListener,FileReadWrite{
     public Settings(){// konstruktor
         initializer();// method som innehåller saker vi vill ha till våra fönster
         setSize(400,460); // specifikt för detta fönster
+
+        pinkButton.setText(ConfigRead(Main.configPath, "backgroundcolor1"));
 
         goBack.addActionListener(this); //istället för detta går de att använda en lambda expprestion(e -> "de som ska göras")
         confirmButton.addActionListener(this);
@@ -130,9 +132,9 @@ public class Settings extends JFrame implements ActionListener,FileReadWrite{
     public String ReadConfig(String filename, String settingType){
 
         //ReadConfig("src/main/resources/Config", "BackgroundcolorOptions")//struktur för att kalla informationen
-        return FileRead(filename, settingType);
+        return ConfigRead(filename, settingType);
     }
     public void WriteConfig(String fileName, String settingType, String writeValue){
-        FileWrite(fileName, settingType, writeValue);
+        ConfigWrite(fileName, settingType, writeValue);
     }
 }
