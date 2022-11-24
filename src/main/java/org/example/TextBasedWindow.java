@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -60,8 +61,14 @@ public class TextBasedWindow extends JFrame {
         });
         uploadFileButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("This button should allow you to upload a file which we will generate text from.");
+            public void actionPerformed(ActionEvent e) { // On button click, import a text file to generate text from
+                JFileChooser fileChooser = new JFileChooser();
+                int uploadedFile = fileChooser.showOpenDialog(null); // Opens a window where the user can select a file
+                if (uploadedFile == JFileChooser.APPROVE_OPTION) { // If user selected a file
+                    File filePath = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                    textToLoad = readFileAsString(String.valueOf(filePath)); // Select the new file as the textToLoad
+                    count = 0; // Reset reset
+                }
             }
         });
         enterTextButton.addActionListener(new ActionListener() {
