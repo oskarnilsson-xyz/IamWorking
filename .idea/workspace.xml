@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4336b3fe-6b66-483e-b58d-bddd6f965b1b" name="Changes" comment="">
-
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphicInterface.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphicInterface.java" afterDir="false" />
+    <list default="true" id="4336b3fe-6b66-483e-b58d-bddd6f965b1b" name="Changes" comment="Feat:&#10;First implementation of splashpage">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dynamic.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphicInterface.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphicInterface.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GraphicInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GraphicInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,14 +25,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-
-        <entry key="$PROJECT_DIR$" value="Dev1" />
-
+        <entry key="$PROJECT_DIR$" value="Dev2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -47,10 +43,25 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "378"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "331",
+    "last_opened_file_path": "C:/Users/Sodez/IdeaProjects/Lektion5November7HandelsakademinSwing",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
-
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sodez\IdeaProjects\IamWorking\src\main\resources" />
+      <recent name="C:\Users\Sodez\IdeaProjects\IamWorking" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -84,7 +95,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Dev2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
