@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public interface FileReadWrite {
-    default String FileRead(String fileName, String value){
+    default String FileRead(String fileName, String settingType){
         Properties prop = new Properties();
 
         try(FileInputStream read = new FileInputStream(fileName)) {
@@ -13,6 +13,8 @@ public interface FileReadWrite {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return prop.getProperty(value);
+        return prop.getProperty(settingType);
+    }
+    default void FileWrite(String fileName, String settingType, String writeValue){
     }
 }
