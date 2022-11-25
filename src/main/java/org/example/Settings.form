@@ -173,7 +173,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="ae85c" class="javax.swing.JButton" binding="pinkButton" default-binding="true">
+          <component id="ae85c" class="javax.swing.JButton" binding="buttonBG1" default-binding="true">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -183,7 +183,7 @@
               <text value="Pink"/>
             </properties>
           </component>
-          <component id="c7a83" class="javax.swing.JButton" binding="blackButton" default-binding="true">
+          <component id="c7a83" class="javax.swing.JButton" binding="buttonBG2" default-binding="true">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -194,7 +194,7 @@
               <text value="Black"/>
             </properties>
           </component>
-          <component id="2ea59" class="javax.swing.JButton" binding="whiteButton" default-binding="true">
+          <component id="2ea59" class="javax.swing.JButton" binding="buttonBG3" default-binding="true">
             <constraints>
               <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -228,7 +228,7 @@
               <text value="Text color"/>
             </properties>
           </component>
-          <component id="ca54c" class="javax.swing.JButton" binding="greenButton" default-binding="true">
+          <component id="ca54c" class="javax.swing.JButton" binding="buttonTextColor1">
             <constraints>
               <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -237,7 +237,7 @@
               <text value="Green"/>
             </properties>
           </component>
-          <component id="c317b" class="javax.swing.JButton" binding="redButton" default-binding="true">
+          <component id="c317b" class="javax.swing.JButton" binding="buttonTextColor2" default-binding="true">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -246,7 +246,7 @@
               <text value="Red"/>
             </properties>
           </component>
-          <component id="d8958" class="javax.swing.JButton" binding="bbText">
+          <component id="d8958" class="javax.swing.JButton" binding="buttonTextColor3">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -256,7 +256,7 @@
               <text value="Black"/>
             </properties>
           </component>
-          <component id="a1850" class="javax.swing.JButton" binding="wbText">
+          <component id="a1850" class="javax.swing.JButton" binding="buttonTextColor4">
             <constraints>
               <grid row="3" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
