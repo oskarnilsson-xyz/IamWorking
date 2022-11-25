@@ -4,7 +4,6 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.event.*;
-import java.awt.*;
 
 
 public class Settings extends JFrame implements ActionListener, ConfigReadWrite {
@@ -15,9 +14,9 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     private JButton goBack;
 
     private JLabel label1;
-    private JButton pinkButton;
-    private JButton blackButton;
-    private JButton whiteButton;
+    private JButton buttonBG1;
+    private JButton buttonBG2;
+    private JButton buttonBG3;
     private JComboBox fileSelect;
     private JButton confirmButton;
     private JSlider writingSpeed;
@@ -26,10 +25,10 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     private JLabel textSize;
     private JLabel BKcolor;
     private JLabel Tcolor;
-    private JButton greenButton;
-    private JButton redButton;
-    private JButton bbText;
-    private JButton wbText;
+    private JButton buttonTextColor1;
+    private JButton buttonTextColor2;
+    private JButton buttonTextColor3;
+    private JButton buttonTextColor4;
     private JLabel fileType;
 
     //String[] comboOptions = {"file1", "file2", "file3"};
@@ -40,17 +39,17 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         initializer();// method som innehåller saker vi vill ha till våra fönster
         setSize(400,460); // specifikt för detta fönster
 
-        pinkButton.setText(ConfigRead(Main.configPath, "backgroundcolor1"));
+        ConfigButton();// Detta ger oss möjligheten att ändra på knapparnas utseende och funktionalitet
 
         goBack.addActionListener(this); //istället för detta går de att använda en lambda expprestion(e -> "de som ska göras")
         confirmButton.addActionListener(this);
-        pinkButton.addActionListener(this);
-        blackButton.addActionListener(this);
-        whiteButton.addActionListener(this);
-        redButton.addActionListener(this);
-        bbText.addActionListener(this);
-        wbText.addActionListener(this);
-        greenButton.addActionListener(this);
+        buttonBG1.addActionListener(this);
+        buttonBG2.addActionListener(this);
+        buttonBG3.addActionListener(this);
+        buttonTextColor2.addActionListener(this);
+        buttonTextColor3.addActionListener(this);
+        buttonTextColor4.addActionListener(this);
+        buttonTextColor1.addActionListener(this);
 
         textsize.addChangeListener(new ChangeListener() {
             @Override
@@ -75,49 +74,56 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         if(e.getSource().equals(confirmButton)){
             TBchanges = new TextBasedWindow();
         }
-        if(e.getSource().equals(pinkButton)){
+        if(e.getSource().equals(buttonBG1)){
             setColor(e);
-        }else if (e.getSource().equals(blackButton)) {
+        }else if (e.getSource().equals(buttonBG2)) {
             setColor(e);
-        }else if (e.getSource().equals(whiteButton)) {
+        }else if (e.getSource().equals(buttonBG3)) {
             setColor(e);
-        }else if (e.getSource().equals(redButton)) {
+        }else if (e.getSource().equals(buttonTextColor2)) {
             setColor(e);
-        }else if (e.getSource().equals(greenButton)) {
+        }else if (e.getSource().equals(buttonTextColor1)) {
             setColor(e);
-        }else if (e.getSource().equals(wbText)) {
+        }else if (e.getSource().equals(buttonTextColor4)) {
             setColor(e);
-        }else if (e.getSource().equals(bbText)) {
+        }else if (e.getSource().equals(buttonTextColor3)) {
             setColor(e);
         }
     }
     public void setColor(ActionEvent colorSelect){// tänkte testa ändra bagrundsfärg med knaptryck, något jag kanske utvecklar senare
 
-        if(colorSelect.getSource().equals(pinkButton)){
-            TBchanges.setPanel1(Color.pink);
-            TBchanges.setBTextArea(Color.pink);
+        if(colorSelect.getSource().equals(buttonBG1)){
+            TBchanges.setPanel1(ConfigColorFinder("backgroundcolor1"));
+            TBchanges.setBTextArea(ConfigColorFinder("backgroundcolor1"));
+            ConfigWrite(Main.configPath,"currentBackgroundcolor",ConfigRead(Main.configPath, "backgroundcolor1"));
         }
-        if(colorSelect.getSource().equals(blackButton) || colorSelect.getSource().equals(bbText)){
-            TBchanges.setPanel1(Color.black);
-            TBchanges.setBTextArea(Color.black);
-            if(colorSelect.getSource().equals(bbText)){
-                TBchanges.setFTextArea(Color.black);
-            }
+        if(colorSelect.getSource().equals(buttonBG2)){
+            TBchanges.setPanel1(ConfigColorFinder("backgroundcolor2"));
+            TBchanges.setBTextArea(ConfigColorFinder("backgroundcolor2"));
+            ConfigWrite(Main.configPath,"currentBackgroundcolor",ConfigRead(Main.configPath, "backgroundcolor2"));
         }
-        if(colorSelect.getSource().equals(whiteButton) || colorSelect.getSource().equals(wbText)){
-            TBchanges.setPanel1(Color.white);
-            TBchanges.setBTextArea(Color.white);
-            if(colorSelect.getSource().equals(wbText)){
-                TBchanges.setFTextArea(Color.white);
-            }
+        if(colorSelect.getSource().equals(buttonBG3)){
+            TBchanges.setPanel1(ConfigColorFinder("backgroundcolor3"));
+            TBchanges.setBTextArea(ConfigColorFinder("backgroundcolor3"));
+            ConfigWrite(Main.configPath,"currentBackgroundcolor",ConfigRead(Main.configPath, "backgroundColor3"));
         }
-        if(colorSelect.getSource().equals(greenButton)){
-            TBchanges.setFTextArea(Color.green);
-        }
-        if(colorSelect.getSource().equals(redButton)){
-            TBchanges.setFTextArea(Color.red);
-        }
+        if(colorSelect.getSource().equals(buttonTextColor4)){
+           TBchanges.setFTextArea(ConfigColorFinder("textColor4"));
+           ConfigWrite(Main.configPath,"currentTextColor",ConfigRead(Main.configPath, "textColor4"));
 
+        }
+        if(colorSelect.getSource().equals(buttonTextColor3)){
+            TBchanges.setFTextArea(ConfigColorFinder("textColor3"));
+            ConfigWrite(Main.configPath,"currentTextColor",ConfigRead(Main.configPath, "textColor3"));
+        }
+        if(colorSelect.getSource().equals(buttonTextColor1)){
+            TBchanges.setFTextArea(ConfigColorFinder("textColor1"));
+            ConfigWrite(Main.configPath,"currentTextColor",ConfigRead(Main.configPath, "textColor1"));
+        }
+        if(colorSelect.getSource().equals(buttonTextColor2)){
+            TBchanges.setFTextArea(ConfigColorFinder("textColor2"));
+            ConfigWrite(Main.configPath,"currentTextColor",ConfigRead(Main.configPath, "textColor2"));
+        }
     }
     private void initializer() {// basic fakta för fönster
         setContentPane(mainPanel);
@@ -136,5 +142,23 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     }
     public void WriteConfig(String fileName, String settingType, String writeValue){
         ConfigWrite(fileName, settingType, writeValue);
+    }
+    void ConfigButton(){
+
+        buttonBG1.setText(ConfigRead(Main.configPath, "backgroundcolor1")); //Ta knappens text från config filen
+        buttonBG2.setText(ConfigRead(Main.configPath, "backgroundcolor2")); //Ta knappens text från config filen
+        buttonBG3.setText(ConfigRead(Main.configPath, "backgroundcolor3")); //Ta knappens text från config filen
+        buttonTextColor2.setText(ConfigRead(Main.configPath, "textColor2")); //Ta knappens text från config filen
+        buttonTextColor3.setText(ConfigRead(Main.configPath, "textColor3")); //Ta knappens text från config filen
+        buttonTextColor4.setText(ConfigRead(Main.configPath, "textColor4")); //Ta knappens text från config filen
+        buttonTextColor1.setText(ConfigRead(Main.configPath, "textColor1")); //Ta knappens text från config filen
+
+        buttonBG1.setBackground(ConfigColorFinder("backgroundcolor1")); //Ta knappens text från config filen
+        buttonBG2.setBackground(ConfigColorFinder("backgroundcolor2")); //Ta knappens text från config filen
+        buttonBG3.setBackground(ConfigColorFinder( "backgroundcolor3")); //Ta knappens text från config filen
+        buttonTextColor2.setBackground(ConfigColorFinder( "textColor2")); //Ta knappens text från config filen
+        buttonTextColor3.setBackground(ConfigColorFinder( "textColor3")); //Ta knappens text från config filen
+        buttonTextColor4.setBackground(ConfigColorFinder( "textColor4")); //Ta knappens text från config filen
+        buttonTextColor1.setBackground(ConfigColorFinder("textColor1")); //Ta knappens text från config filen
     }
 }

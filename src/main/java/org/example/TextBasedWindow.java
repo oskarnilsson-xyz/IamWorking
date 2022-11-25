@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class TextBasedWindow extends JFrame {
+public class TextBasedWindow extends JFrame implements ConfigReadWrite{
 
     public void setPanel1(Color color) {
         panel1.setBackground(color);
@@ -35,8 +35,14 @@ public class TextBasedWindow extends JFrame {
         setVisible(true);
 
         // Imitate settings
-        mainTextArea.setForeground(Color.blue);
-        mainTextArea.setBackground(Color.lightGray);
+        //mainTextArea.setForeground(Color.blue);
+        //mainTextArea.setBackground(Color.lightGray);
+
+
+
+        mainTextArea.setBackground(ConfigColorFinder("currentBackgroundcolor"));
+        panel1.setBackground(ConfigColorFinder("currentBackgroundcolor"));
+        mainTextArea.setForeground(ConfigColorFinder("currentTextcolor"));
 
         goToSettingsButton.addActionListener(new ActionListener() {
             @Override
@@ -78,5 +84,8 @@ public class TextBasedWindow extends JFrame {
                 }
             }
         });
+
     }
+
+
 }
