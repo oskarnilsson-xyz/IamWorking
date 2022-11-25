@@ -20,7 +20,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     private JComboBox fileSelect;
     private JButton confirmButton;
     private JSlider writingSpeed;
-    private JSlider textsize;
+    private JSlider fontsize;
     private JLabel speed;
     private JLabel textSize;
     private JLabel BKcolor;
@@ -30,6 +30,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     private JButton buttonTextColor3;
     private JButton buttonTextColor4;
     private JLabel fileType;
+    private JComboBox FontBox;
 
     //String[] comboOptions = {"file1", "file2", "file3"};
     TextBasedWindow TBchanges = new TextBasedWindow();
@@ -51,16 +52,23 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         buttonTextColor4.addActionListener(this);
         buttonTextColor1.addActionListener(this);
 
-        textsize.addChangeListener(new ChangeListener() {
+        fontsize.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
-
+                TBchanges.setFontSize(ConfigRead(Main.configPath,"currentFont"),fontsize.getValue());
             }
         });
         writingSpeed.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
 
+            }
+        });
+        FontBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                TBchanges.setFont((String) FontBox.getSelectedItem());
+                ConfigWrite(Main.configPath,"currentFont",(String)FontBox.getSelectedItem());
             }
         });
     }
@@ -72,7 +80,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
             dispose();//stänger ner Settingsfönstret
         }
         if(e.getSource().equals(confirmButton)){
-            TBchanges = new TextBasedWindow();
+            setVisible(false);
         }
         if(e.getSource().equals(buttonBG1)){
             setColor(e);
@@ -90,10 +98,10 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
             setColor(e);
         }
     }
-    public void setColor(ActionEvent colorSelect){// tänkte testa ändra bagrundsfärg med knaptryck, något jag kanske utvecklar senare
+    public void setColor(ActionEvent colorSelect){//  ändra bakgrundsfärg med knapptryck
 
         if(colorSelect.getSource().equals(buttonBG1)){
-            TBchanges.setPanel1(ConfigColorFinder("backgroundcolor1"));
+            TBchanges.setPanel1(ConfigColorFinder("backgroundcolor1"));//den går in i config för att läsa parametern
             TBchanges.setBTextArea(ConfigColorFinder("backgroundcolor1"));
             ConfigWrite(Main.configPath,"currentBackgroundcolor",ConfigRead(Main.configPath, "backgroundcolor1"));
         }
@@ -133,10 +141,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         setVisible(true);
 
     }
-
-
     public String ReadConfig(String filename, String settingType){
-
         //ReadConfig("src/main/resources/Config", "BackgroundcolorOptions")//struktur för att kalla informationen
         return ConfigRead(filename, settingType);
     }

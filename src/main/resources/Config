@@ -1,5 +1,5 @@
-#Fri Nov 25 11:57:44 CET 2022
-currentTextColor=red
+#Fri Nov 25 21:13:03 CET 2022
+currentTextColor=black
 fileGraphic3=fox23.txt
 fileGraphic2=fox22.txt
 fileGraphic1=fox21.txt
@@ -23,7 +23,7 @@ textSize3=14
 fileText2=fox12.txt
 fileText1=fox11.txt
 fileText3=fox13.txt
-currentFont=Arial
+currentFont=Source Code Pro
 settingsFile=src/main/resources/Config
 currentSpeed=10
 textColor1=red
