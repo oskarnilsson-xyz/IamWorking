@@ -26,9 +26,7 @@ public Splashpage(){
         @Override
         public void mouseReleased(MouseEvent textInterfaceSelected) {
             super.mouseReleased(textInterfaceSelected);
-
             //Open settings window by creating an object of target frame.
-            TextBasedWindow textBasedWindow = new TextBasedWindow();
             Settings settingsWindow = new Settings();
             dispose();
         }
@@ -40,6 +38,7 @@ public Splashpage(){
 
             //Open settings window by creating an object of target frame.
             GraphicInterface graphicInterfaceWindow = new GraphicInterface();
+            Settings settingsWindow = new Settings();
             dispose();
         }
     });
