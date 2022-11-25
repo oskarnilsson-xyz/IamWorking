@@ -35,7 +35,7 @@ public interface ConfigReadWrite {
 
         Color color;
         try {
-            Field field = Color.class.getField(ConfigRead(Main.configPath, settingType));
+            Field field = Color.class.getField(ConfigRead(Main.configPath, settingType).toLowerCase());
             color = (Color) field.get(null);
         } catch (Exception e) {
             color = null; // Not defined

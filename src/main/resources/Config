@@ -1,5 +1,5 @@
-#Fri Nov 25 11:57:44 CET 2022
-currentTextColor=red
+#Fri Nov 25 13:44:51 CET 2022
+currentTextColor=Green
 fileGraphic3=fox23.txt
 fileGraphic2=fox22.txt
 fileGraphic1=fox21.txt
@@ -26,11 +26,11 @@ fileText3=fox13.txt
 currentFont=Arial
 settingsFile=src/main/resources/Config
 currentSpeed=10
-textColor1=red
-textColor4=white
-textColor2=green
-textColor3=black
-backgroundcolor2=black
-backgroundcolor1=pink
-currentBackgroundcolor=pink
-backgroundcolor3=white
+textColor1=Red
+textColor4=White
+textColor2=Green
+textColor3=Black
+backgroundcolor2=Black
+backgroundcolor1=Pink
+currentBackgroundcolor=Pink
+backgroundcolor3=White
