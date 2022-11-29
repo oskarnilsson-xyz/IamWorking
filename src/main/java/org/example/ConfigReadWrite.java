@@ -18,7 +18,7 @@ public interface ConfigReadWrite {
         }
         return prop.getProperty(settingType);
     }
-    default void ConfigWrite(String fileName, String settingType, String writeValue){
+    default void ConfigWrite(String fileName, String settingType, String writeValue){ //lägger till värden i config filen
         Properties prop = new Properties();
         try(FileInputStream read = new FileInputStream(fileName)){
             prop.load(read);
@@ -35,7 +35,7 @@ public interface ConfigReadWrite {
 
         Color color;
         try {
-            Field field = Color.class.getField(ConfigRead(Main.configPath, settingType));
+            Field field = Color.class.getField(ConfigRead(Main.configPath, settingType).toLowerCase());
             color = (Color) field.get(null);
         } catch (Exception e) {
             color = null; // Not defined

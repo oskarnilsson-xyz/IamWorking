@@ -67,7 +67,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         FontBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TBchanges.setFont((String) FontBox.getSelectedItem());
+                TBchanges.setFont((String)FontBox.getSelectedItem());
                 ConfigWrite(Main.configPath,"currentFont",(String)FontBox.getSelectedItem());
             }
         });
