@@ -18,7 +18,7 @@ public interface ConfigReadWrite {
         }
         return prop.getProperty(settingType);
     }
-    default void ConfigWrite(String fileName, String settingType, String writeValue){
+    default void ConfigWrite(String fileName, String settingType, String writeValue){ //lägger till värden i config filen
         Properties prop = new Properties();
         try(FileInputStream read = new FileInputStream(fileName)){
             prop.load(read);

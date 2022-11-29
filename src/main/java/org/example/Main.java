@@ -6,8 +6,6 @@ public class Main {
 
         //var TextBasedWindow = new TextBasedWindow();
 
-
-
         var splashPageWindow = new Splashpage();
 
     }

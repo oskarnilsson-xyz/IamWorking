@@ -18,6 +18,12 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     }
     private JPanel panel1;
     private JTextArea mainTextArea;
+    public void setFont(String f){
+        mainTextArea.setFont(new Font(f,Font.PLAIN,mainTextArea.getFont().getSize()));
+    }
+    public void setFontSize(String font, int size){
+        mainTextArea.setFont(new Font(font,Font.PLAIN, size));
+    }
     public void setBTextArea(Color color){
         mainTextArea.setBackground(color);
     }public void setFTextArea(Color color){
@@ -62,9 +68,7 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
         //mainTextArea.setForeground(Color.blue);
         //mainTextArea.setBackground(Color.lightGray);
 
-
-
-        mainTextArea.setBackground(ConfigColorFinder("currentBackgroundcolor"));
+        mainTextArea.setBackground(ConfigColorFinder("currentBackgroundcolor"));// sätter färgen via Config filen
         panel1.setBackground(ConfigColorFinder("currentBackgroundcolor"));
         mainTextArea.setForeground(ConfigColorFinder("currentTextcolor"));
 
