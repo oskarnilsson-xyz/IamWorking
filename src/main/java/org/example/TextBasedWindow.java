@@ -11,13 +11,22 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.*;
 
-public class TextBasedWindow extends JFrame {
+public class TextBasedWindow extends JFrame implements ConfigReadWrite{
 
+    public void setPanel1(Color color) {
+        panel1.setBackground(color);
+    }
     private JPanel panel1;
     private JTextArea mainTextArea;
+    public void setBTextArea(Color color){
+        mainTextArea.setBackground(color);
+    }public void setFTextArea(Color color){
+        mainTextArea.setForeground(color);
+    }
     private JButton goToSettingsButton;
     private JButton uploadFileButton;
     private JButton enterTextButton;
+
 
 
     // File-handling for default file
@@ -37,6 +46,7 @@ public class TextBasedWindow extends JFrame {
     String textToLoad = defaultText; // Todo: Add logic to determine what to generate text from(Default, uploaded file, etc)
 
     // Text generation variables
+
     char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
     int generationSpeed = 10; // Antalet tecken som ska generaras vid varje knapptryckning
     int count = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
@@ -49,8 +59,14 @@ public class TextBasedWindow extends JFrame {
         setVisible(true);
 
         // Imitate settings
-        mainTextArea.setForeground(Color.blue);
-        mainTextArea.setBackground(Color.lightGray);
+        //mainTextArea.setForeground(Color.blue);
+        //mainTextArea.setBackground(Color.lightGray);
+
+
+
+        mainTextArea.setBackground(ConfigColorFinder("currentBackgroundcolor"));
+        panel1.setBackground(ConfigColorFinder("currentBackgroundcolor"));
+        mainTextArea.setForeground(ConfigColorFinder("currentTextcolor"));
 
         goToSettingsButton.addActionListener(new ActionListener() {
             @Override
@@ -97,5 +113,8 @@ public class TextBasedWindow extends JFrame {
                 }
             }
         });
+
     }
+
+
 }
