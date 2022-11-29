@@ -11,28 +11,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.*;
 
-public class TextBasedWindow extends JFrame implements ConfigReadWrite{
+public class TextBasedWindow extends JFrame {
 
-    public void setPanel1(Color color) {
-        panel1.setBackground(color);
-    }
     private JPanel panel1;
     private JTextArea mainTextArea;
-    public void setFont(String f){
-        mainTextArea.setFont(new Font(f,Font.PLAIN,mainTextArea.getFont().getSize()));
-    }
-    public void setFontSize(String font, int size){
-        mainTextArea.setFont(new Font(font,Font.PLAIN, size));
-    }
-    public void setBTextArea(Color color){
-        mainTextArea.setBackground(color);
-    }public void setFTextArea(Color color){
-        mainTextArea.setForeground(color);
-    }
     private JButton goToSettingsButton;
     private JButton uploadFileButton;
     private JButton enterTextButton;
-
 
 
     // File-handling for default file
@@ -48,13 +33,10 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
             throw new RuntimeException(e);
         }
     }
-    // Old way. Now the textToLoad is loaded from confile file & changed via settings window
-    //String defaultText = readFileAsString("src/main/resources/files/defaultText");  // A default text to generate from
-    //String textToLoad = defaultText; // Todo: Add logic to determine what to generate text from(Default, uploaded file, etc)
-    String textToLoad;
+    String defaultText = readFileAsString("src/main/resources/files/defaultText");  // A default text to generate from
+    String textToLoad = defaultText; // Todo: Add logic to determine what to generate text from(Default, uploaded file, etc)
 
     // Text generation variables
-
     char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
     int generationSpeed = 10; // Antalet tecken som ska generaras vid varje knapptryckning
     int count = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
@@ -67,14 +49,8 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
         setVisible(true);
 
         // Imitate settings
-        //mainTextArea.setForeground(Color.blue);
-        //mainTextArea.setBackground(Color.lightGray);
-
-        mainTextArea.setBackground(ConfigColorFinder("currentBackgroundcolor"));// sätter färgen via Config filen
-        panel1.setBackground(ConfigColorFinder("currentBackgroundcolor"));
-        mainTextArea.setForeground(ConfigColorFinder("currentTextcolor"));
-
-        textToLoad = readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
+        mainTextArea.setForeground(Color.blue);
+        mainTextArea.setBackground(Color.lightGray);
 
         goToSettingsButton.addActionListener(new ActionListener() {
             @Override
@@ -85,13 +61,15 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
         });
         uploadFileButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { // On button click, import a text file to generate text from
-                JFileChooser fileChooser = new JFileChooser();
-                int uploadedFile = fileChooser.showOpenDialog(null); // Opens a window where the user can select a file
-                if (uploadedFile == JFileChooser.APPROVE_OPTION) { // If user selected a file
-                    File filePath = new File(fileChooser.getSelectedFile().getAbsolutePath());
-                    textToLoad = readFileAsString(String.valueOf(filePath)); // Select the new file as the textToLoad
-                    count = 0; // Reset reset
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("This button should allow you to upload a file which we will generate text from.");
+                JFileChooser fileUpload = new JFileChooser();
+                fileUpload.showOpenDialog(null);
+                int res = fileUpload.showOpenDialog(null);
+
+                if (res == JFileChooser.APPROVE_OPTION) {
+                    File filePath = new File(fileUpload.getSelectedFile().getAbsolutePath());
+                    System.out.println(filePath);
                 }
             }
         });
@@ -121,8 +99,5 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
                 }
             }
         });
-
     }
-
-
 }

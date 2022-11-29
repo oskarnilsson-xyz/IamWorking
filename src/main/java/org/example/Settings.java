@@ -71,6 +71,15 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
                 ConfigWrite(Main.configPath,"currentFont",(String)FontBox.getSelectedItem());
             }
         });
+        fileSelect.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ConfigWrite(Main.configPath, "currentFileText", (String)fileSelect.getSelectedItem());
+                TBchanges.textToLoad = TBchanges.readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
+                TBchanges.count=0;
+
+            }
+        });
     }
 
     @Override
