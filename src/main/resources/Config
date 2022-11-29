@@ -1,4 +1,3 @@
-#Tue Nov 29 12:05:55 CET 2022
 currentTextColor=Green
 fileGraphic3=fox23.txt
 fileGraphic2=fox22.txt
@@ -23,14 +22,14 @@ textSize3=14
 fileText2=src/main/resources/files/defaultText
 fileText1=src/main/resources/files/test2.txt
 fileText3=fox13.txt
-currentFont=Times New Roman
+currentFont=Source Code Pro
 settingsFile=src/main/resources/Config
-currentSpeed=10
+currentSpeed=5
 textColor1=Red
 textColor4=White
 textColor2=Green
 textColor3=Black
 backgroundcolor2=Black
 backgroundcolor1=Pink
-currentBackgroundcolor=Pink
+currentBackgroundcolor=Black
 backgroundcolor3=White
