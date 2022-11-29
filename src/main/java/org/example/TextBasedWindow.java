@@ -54,8 +54,12 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     // Text generation variables
 
     char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
-    int generationSpeed = 10; // Antalet tecken som ska generaras vid varje knapptryckning
+    int generationSpeed = Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed")); // Antalet tecken som ska generaras vid varje knapptryckning
+    public void setGenerationSpeed(int generationSpeed) {
+        this.generationSpeed = generationSpeed;
+    }
     int count = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
+    int charactersWritten = 0;
 
     public TextBasedWindow() {
         setContentPane(panel1);
@@ -63,6 +67,7 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
         setSize(500, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
+
 
         // Imitate settings
         //mainTextArea.setForeground(Color.blue);
@@ -75,8 +80,10 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
         goToSettingsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Settings settings = new Settings(); // Todo: Should any values be sent to settings window?
-                dispose(); // Closes window
+                Settings settings = new Settings();
+                settings.setVisible(true);
+                 // Todo: Should any values be sent to settings window?
+                // dispose(); // Closes window
             }
         });
         uploadFileButton.addActionListener(new ActionListener() {
@@ -110,10 +117,11 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
                 if (new String(keyInputs).indexOf(e.getKeyChar()) >= 0) {
                     System.out.println(e.getKeyChar());
                     count++;
-                    if(count * generationSpeed >= textToLoad.length()) { // If the number of characters that should be written is greater than our total text length, restart from 0
+                    charactersWritten += generationSpeed;
+                    if(charactersWritten >= textToLoad.length()) { // If the number of characters that should be written is greater than our total text length, restart from 0
                         count=0;
                     }
-                    mainTextArea.setText(textToLoad.substring(0, (count*10)));
+                    mainTextArea.setText(textToLoad.substring(0, charactersWritten));
                 }
             }
         });

@@ -19,7 +19,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     private JButton buttonBG3;
     private JComboBox fileSelect;
     private JButton confirmButton;
-    private JSlider writingSpeed;
+    public JSlider writingSpeed;
     private JSlider fontsize;
     private JLabel speed;
     private JLabel textSize;
@@ -33,6 +33,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     private JComboBox FontBox;
 
     //String[] comboOptions = {"file1", "file2", "file3"};
+
     TextBasedWindow TBchanges = new TextBasedWindow();
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till våra fönster
 
@@ -52,6 +53,9 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         buttonTextColor4.addActionListener(this);
         buttonTextColor1.addActionListener(this);
 
+        writingSpeed.setValue(Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed")));
+        fontsize.setValue(Integer.parseInt(ConfigRead(Main.configPath,"currentTextSize")));
+
         fontsize.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
@@ -61,7 +65,10 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         writingSpeed.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
-
+                String value = Integer.toString(writingSpeed.getValue());
+                ConfigWrite(Main.configPath,"currentSpeed",value);
+                //TBchanges.generationSpeed = writingSpeed.getValue();
+                TBchanges.generationSpeed = Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed"));;
             }
         });
         FontBox.addActionListener(new ActionListener() {
@@ -81,6 +88,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         }
         if(e.getSource().equals(confirmButton)){
             setVisible(false);
+            //TBchanges.setVisible(true);
         }
         if(e.getSource().equals(buttonBG1)){
             setColor(e);
