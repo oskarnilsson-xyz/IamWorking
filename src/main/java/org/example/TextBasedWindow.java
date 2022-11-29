@@ -54,12 +54,8 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     String textToLoad;
 
     // Text generation variables
-
     char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
     int generationSpeed = Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed")); // Antalet tecken som ska generaras vid varje knapptryckning
-    public void setGenerationSpeed(int generationSpeed) {
-        this.generationSpeed = generationSpeed;
-    }
     int count = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
     int charactersWritten = 0;
 
@@ -85,7 +81,6 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
             @Override
             public void actionPerformed(ActionEvent e) {
                 Settings settings = new Settings();
-                settings.setVisible(true);
                  // Todo: Should any values be sent to settings window?
                 // dispose(); // Closes window
             }
@@ -129,8 +124,5 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
                 }
             }
         });
-
     }
-
-
 }

@@ -31,9 +31,6 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     private JButton buttonTextColor4;
     private JLabel fileType;
     private JComboBox FontBox;
-
-    //String[] comboOptions = {"file1", "file2", "file3"};
-
     TextBasedWindow TBchanges = new TextBasedWindow();
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till våra fönster
 
@@ -42,6 +39,8 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         setSize(400,460); // specifikt för detta fönster
 
         ConfigButton();// Detta ger oss möjligheten att ändra på knapparnas utseende och funktionalitet
+        writingSpeed.setValue(Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed"))); // gör så att sliders hänger med config-fil
+        fontsize.setValue(Integer.parseInt(ConfigRead(Main.configPath,"currentTextSize")));
 
         goBack.addActionListener(this); //istället för detta går de att använda en lambda expprestion(e -> "de som ska göras")
         confirmButton.addActionListener(this);
@@ -53,13 +52,13 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         buttonTextColor4.addActionListener(this);
         buttonTextColor1.addActionListener(this);
 
-        writingSpeed.setValue(Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed")));
-        fontsize.setValue(Integer.parseInt(ConfigRead(Main.configPath,"currentTextSize")));
-
         fontsize.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
+                String value = Integer.toString(fontsize.getValue());
+                ConfigWrite(Main.configPath,"currentSpeed",value);
                 TBchanges.setFontSize(ConfigRead(Main.configPath,"currentFont"),fontsize.getValue());
+
             }
         });
         writingSpeed.addChangeListener(new ChangeListener() {
@@ -84,12 +83,11 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
                 ConfigWrite(Main.configPath, "currentFileText", (String)fileSelect.getSelectedItem());
                 TBchanges.textToLoad = TBchanges.readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
                 TBchanges.count=0;
-
             }
         });
     }
 
-    @Override
+    @Override //knapparnas funktion
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(goBack)){ // gör så att tillbaka knappen tar en tillbaka till start sida
             Splashpage backToSplash = new Splashpage(); // öppnar splachpage
@@ -154,7 +152,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         setContentPane(mainPanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
         setTitle("I am working");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         setVisible(true);
 
     }

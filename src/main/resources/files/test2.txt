@@ -92,10 +92,11 @@ public class TextBasedWindow extends JFrame {
                 if (new String(keyInputs).indexOf(e.getKeyChar()) >= 0) {
                     System.out.println(e.getKeyChar());
                     count++;
-                    if(count * generationSpeed >= textToLoad.length()) { // If the number of characters that should be written is greater than our total text length, restart from 0
-                        count=0;
-                    }
-                    mainTextArea.setText(textToLoad.substring(0, (count*10)));
+                    charactersWritten += generationSpeed;
+                     if(charactersWritten >= textToLoad.length()) { // If the number of characters that should be written is greater than our total text length, restart from 0
+                         count=0;
+                     }
+                     mainTextArea.setText(textToLoad.substring(0, charactersWritten));
                 }
             }
         });
