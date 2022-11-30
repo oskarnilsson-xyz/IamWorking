@@ -7,22 +7,22 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.Properties;
 
-public interface ConfigReadWrite {
+public interface ConfigReadWrite { //Returnerar en string baserat på en given nyckel(allt till och med = är nyckel.
     default String ConfigRead(String fileName, String settingType){ //Retunerar inställningsvärde från config filen
         Properties prop = new Properties();
 
-        try(FileInputStream read = new FileInputStream(fileName)) {
-            prop.load(read);
+        try(FileInputStream fileToRead = new FileInputStream(fileName)) {
+            prop.load(fileToRead);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return prop.getProperty(settingType);
     }
-    default void ConfigWrite(String fileName, String settingType, String writeValue){ //lägger till värden i config filen
+    default void ConfigWrite(String fileName, String settingType, String writeValue){ //Skriver över ett värde med nykel 'settingType' med värdet write value.???
         Properties prop = new Properties();
-        try(FileInputStream read = new FileInputStream(fileName)){
-            prop.load(read);
-            read.close();
+        try(FileInputStream fileToRead = new FileInputStream(fileName)){
+            prop.load(fileToRead);
+            fileToRead.close();
             prop.setProperty(settingType, writeValue);
             prop.store(new FileOutputStream(fileName), null);
 
@@ -31,7 +31,7 @@ public interface ConfigReadWrite {
         }
 
     }
-    default Color ConfigColorFinder(String settingType) {
+    default Color ConfigColorFinder(String settingType) { //Converts the value in key(settingType) into an object of the Color class.
 
         Color color;
         try {
