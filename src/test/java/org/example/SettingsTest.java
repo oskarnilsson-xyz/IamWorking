@@ -11,10 +11,19 @@ import static org.junit.jupiter.api.Assertions.*;
 class SettingsTest {
 
     @RepeatedTest(5)
-    void readConfig() {
+    void readConfigFilenameIsNull() {
         Settings settings = new Settings();
         Assertions.assertThrows(RuntimeException.class, () -> {
             settings.ReadConfig(null, "fox");
+
+        });
+
+    } @RepeatedTest(5)
+    void readConfigSettingTypeIsNull() {
+        Settings settings = new Settings();
+        Assertions.assertThrows(RuntimeException.class, () -> {
+            settings.ReadConfig("src/main/resources/Config", null);
+
         });
 
     }
@@ -42,6 +51,21 @@ class SettingsTest {
             settings.WriteConfig(null, "fox", "fox");
         });
     }
+    @RepeatedTest(5)
+    void writeConfigSettingTypeIsNull() {
+        Settings settings = new Settings();
+        Assertions.assertThrows(RuntimeException.class, () -> {
+            settings.WriteConfig("src/main/resources/Config", null, "fox");
+        });
+
+    }
+    @RepeatedTest(5)
+    void writeConfigWriteValueIsNull() {
+        Settings settings = new Settings();
+        Assertions.assertThrows(RuntimeException.class, () -> {
+            settings.WriteConfig("src/main/resources/Config", "currentTextColor", null);
+        });
+    }
 
     @RepeatedTest(5)
     void writeConfigWritesString() {
@@ -55,4 +79,5 @@ class SettingsTest {
         }
 
     }
+
 }
