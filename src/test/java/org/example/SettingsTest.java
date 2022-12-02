@@ -1,14 +1,18 @@
 package org.example;
 
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class SettingsTest {
+
 
     @RepeatedTest(5)
     void readConfigFilenameIsNull() {
@@ -77,6 +81,12 @@ class SettingsTest {
             settings.WriteConfig("src/main/resources/Config", "currentTextColor", "Black");
             assertEquals("Black", settings.ReadConfig("src/main/resources/Config", "currentTextColor"));
         }
+
+
+    @Test
+    void thisShouldChangeTheColorOfTextBasedWindow(ActionEvent e){
+        var textSettings = new TextSettings();
+        textSettings.setColor(e);
 
     }
 

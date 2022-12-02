@@ -6,7 +6,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.event.*;
 
 
-public class Settings extends JFrame implements ActionListener, ConfigReadWrite {
+public class TextSettings extends JFrame implements ActionListener, ConfigReadWrite {
     private JPanel mainPanel;
     private JPanel center;
     private JPanel bottom;
@@ -19,7 +19,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     private JButton buttonBG3;
     private JComboBox fileSelect;
     private JButton confirmButton;
-    private JSlider writingSpeed;
+    public JSlider writingSpeed;
     private JSlider fontsize;
     private JLabel speed;
     private JLabel textSize;
@@ -31,16 +31,18 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     private JButton buttonTextColor4;
     private JLabel fileType;
     private JComboBox FontBox;
-
-    //String[] comboOptions = {"file1", "file2", "file3"};
-    TextBasedWindow TBchanges = new TextBasedWindow();
+    TextBasedWindow TBchanges;
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till våra fönster
-
-    public Settings(){// konstruktor
+    public TextSettings(TextBasedWindow textBasedWindow){
+        TBchanges = textBasedWindow;
+    }
+    public TextSettings(){// konstruktor
         initializer();// method som innehåller saker vi vill ha till våra fönster
         setSize(400,460); // specifikt för detta fönster
 
         ConfigButton();// Detta ger oss möjligheten att ändra på knapparnas utseende och funktionalitet
+        writingSpeed.setValue(Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed"))); // gör så att sliders hänger med config-fil
+        fontsize.setValue(Integer.parseInt(ConfigRead(Main.configPath,"currentTextSize")));
 
         goBack.addActionListener(this); //istället för detta går de att använda en lambda expprestion(e -> "de som ska göras")
         confirmButton.addActionListener(this);
@@ -55,13 +57,19 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         fontsize.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
+                String value = Integer.toString(fontsize.getValue());
+                ConfigWrite(Main.configPath,"currentSpeed",value);
                 TBchanges.setFontSize(ConfigRead(Main.configPath,"currentFont"),fontsize.getValue());
+
             }
         });
         writingSpeed.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
-
+                String value = Integer.toString(writingSpeed.getValue());
+                ConfigWrite(Main.configPath,"currentSpeed",value);
+                //TBchanges.generationSpeed = writingSpeed.getValue();
+                TBchanges.generationSpeed = Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed"));;
             }
         });
         FontBox.addActionListener(new ActionListener() {
@@ -71,16 +79,26 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
                 ConfigWrite(Main.configPath,"currentFont",(String)FontBox.getSelectedItem());
             }
         });
+        fileSelect.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ConfigWrite(Main.configPath, "currentFileText", (String)fileSelect.getSelectedItem());
+                TBchanges.textToLoad = TBchanges.readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
+                TBchanges.count=0;
+            }
+        });
     }
 
-    @Override
+    @Override //knapparnas funktion
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(goBack)){ // gör så att tillbaka knappen tar en tillbaka till start sida
             Splashpage backToSplash = new Splashpage(); // öppnar splachpage
+            TBchanges.dispose();
             dispose();//stänger ner Settingsfönstret
         }
         if(e.getSource().equals(confirmButton)){
             setVisible(false);
+            //TBchanges.setVisible(true);
         }
         if(e.getSource().equals(buttonBG1)){
             setColor(e);
@@ -137,7 +155,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
         setContentPane(mainPanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
         setTitle("I am working");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         setVisible(true);
 
     }
