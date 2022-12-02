@@ -29,10 +29,9 @@ public interface ConfigReadWrite { //Returnerar en string baserat på en given n
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
-    default Color ConfigColorFinder(String settingType) { //Converts the value in key(settingType) into an object of the Color class.
 
+    default Color ConfigColorFinder(String settingType) { //Converts the value in key(settingType) into an object of the Color class.
         Color color;
         try {
             Field field = Color.class.getField(ConfigRead(Main.configPath, settingType).toLowerCase());

@@ -6,7 +6,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.event.*;
 
 
-public class Settings extends JFrame implements ActionListener, ConfigReadWrite {
+public class TextSettings extends JFrame implements ActionListener, ConfigReadWrite {
     private JPanel mainPanel;
     private JPanel center;
     private JPanel bottom;
@@ -31,10 +31,12 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     private JButton buttonTextColor4;
     private JLabel fileType;
     private JComboBox FontBox;
-    TextBasedWindow TBchanges = new TextBasedWindow();
+    TextBasedWindow TBchanges;
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till våra fönster
-
-    public Settings(){// konstruktor
+    public TextSettings(TextBasedWindow textBasedWindow){
+        TBchanges = textBasedWindow;
+    }
+    public TextSettings(){// konstruktor
         initializer();// method som innehåller saker vi vill ha till våra fönster
         setSize(400,460); // specifikt för detta fönster
 
@@ -91,6 +93,7 @@ public class Settings extends JFrame implements ActionListener, ConfigReadWrite 
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(goBack)){ // gör så att tillbaka knappen tar en tillbaka till start sida
             Splashpage backToSplash = new Splashpage(); // öppnar splachpage
+            TBchanges.dispose();
             dispose();//stänger ner Settingsfönstret
         }
         if(e.getSource().equals(confirmButton)){
