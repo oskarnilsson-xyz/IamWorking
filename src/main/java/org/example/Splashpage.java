@@ -27,7 +27,7 @@ public Splashpage(){
         public void mouseReleased(MouseEvent textInterfaceSelected) {
             super.mouseReleased(textInterfaceSelected);
             //Open settings window by creating an object of target frame.
-            TextSettings settingsWindow = new TextSettings();
+            Manager.TextWindowStart();
             dispose();
         }
     });

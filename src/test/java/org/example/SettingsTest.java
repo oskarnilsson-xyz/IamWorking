@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class SettingsTest {
     @Test
     void thisShouldChangeTheColorOfTextBasedWindow(ActionEvent e){
-        var textSettings = new TextSettings();
-        textSettings.setColor(e);
+        //var textSettings = new TextSettings();
+        //textSettings.setColor(e);
     }
 
 }

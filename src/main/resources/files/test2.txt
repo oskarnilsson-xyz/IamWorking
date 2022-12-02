@@ -34,7 +34,7 @@ public class TextBasedWindow extends JFrame {
         }
     }
     String defaultText = readFileAsString("src/main/resources/files/defaultText");  // A default text to generate from
-    String textToLoad = defaultText; // Todo: Add logic to determine what to generate text from(Default, uploaded file, etc)
+    String textToLoad = defaultText;
 
     // Text generation variables
     char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
@@ -55,7 +55,7 @@ public class TextBasedWindow extends JFrame {
         goToSettingsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Settings settings = new Settings(); // Todo: Should any values be sent to settings window?
+                Settings settings = new Settings();
                 dispose(); // Closes window
             }
         });

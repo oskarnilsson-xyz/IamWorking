@@ -46,9 +46,9 @@
               <font name="Source Code Pro"/>
               <foreground color="-15395563"/>
               <model>
-                <item value="fileText1"/>
-                <item value="fileText2"/>
-                <item value="fileText3"/>
+                <item value="programmerText"/>
+                <item value="hackerText"/>
+                <item value="essayText"/>
               </model>
             </properties>
           </component>
