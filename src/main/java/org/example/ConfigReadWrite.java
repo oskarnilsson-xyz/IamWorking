@@ -29,10 +29,8 @@ public interface ConfigReadWrite {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
     default Color ConfigColorFinder(String settingType) {
-
         Color color;
         try {
             Field field = Color.class.getField(ConfigRead(Main.configPath, settingType).toLowerCase());

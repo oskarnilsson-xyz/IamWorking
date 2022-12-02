@@ -80,7 +80,7 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
         goToSettingsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Settings settings = new Settings();
+                TextSettings settings = new TextSettings(); // PROBLEM! <--- Lös detta
                  // Todo: Should any values be sent to settings window?
                 // dispose(); // Closes window
             }
