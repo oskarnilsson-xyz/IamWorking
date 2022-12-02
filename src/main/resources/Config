@@ -1,4 +1,4 @@
-#Wed Nov 30 11:17:44 CET 2022
+#Wed Nov 30 19:18:57 CET 2022
 currentTextColor=Green
 fileGraphic3=fox23.txt
 fileGraphic2=fox22.txt
@@ -25,7 +25,7 @@ fileText1=src/main/resources/files/test2.txt
 fileText3=fox13.txt
 currentFont=Source Code Pro
 settingsFile=src/main/resources/Config
-currentSpeed=20
+currentSpeed=14
 textColor1=Red
 textColor4=White
 textColor2=Green
