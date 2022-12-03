@@ -69,7 +69,6 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
                 ConfigWrite(Main.configPath, "currentSpeed", value);
                 //TBchanges.generationSpeed = writingSpeed.getValue();
                 TBchanges.generationSpeed = Integer.parseInt(ConfigRead(Main.configPath, "currentSpeed"));
-                ;
             }
         });
         FontBox.addActionListener(new ActionListener() {
@@ -84,7 +83,8 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
             public void actionPerformed(ActionEvent e) {
                 ConfigWrite(Main.configPath, "currentFileText", (String) fileSelect.getSelectedItem());
                 TBchanges.textToLoad = TBchanges.readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
-                TBchanges.count = 0;
+                //TBchanges.count = 0;
+                TBchanges.charactersWritten = 0;
             }
         });
     }

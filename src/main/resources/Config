@@ -1,5 +1,6 @@
-#Fri Dec 02 10:07:34 CET 2022
+#Sat Dec 03 11:12:27 CET 2022
 currentTextColor=Green
+hackerText=src/main/resources/files/hackerText
 fileGraphic3=fox23.txt
 fileGraphic2=fox22.txt
 fileGraphic1=fox21.txt
@@ -7,7 +8,7 @@ textSize6=20
 font2=Times New Roman
 font1=Arial
 font3=Source Code Pro
-currentFileText=fileText2
+currentFileText=programmerText
 currentTextSize=12
 textSize1=10
 speed5=10
@@ -19,13 +20,12 @@ currentFileGraphics=fox22.txt
 textSize5=18
 speed1=1
 textSize2=12
+programmerText=src/main/resources/files/programmingText.txt
 textSize3=14
-hackerText=src/main/resources/files/defaultText
-programmerText=src/main/resources/files/test2.txt
-essayText=fox13.txt
+essayText=src/main/resources/files/essayText.txt
 currentFont=Source Code Pro
 settingsFile=src/main/resources/Config
-currentSpeed=14
+currentSpeed=6
 textColor1=Red
 textColor4=White
 textColor2=Green
