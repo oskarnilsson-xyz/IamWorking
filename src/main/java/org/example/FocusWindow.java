@@ -9,7 +9,7 @@ public class FocusWindow extends JFrame {
     private JButton closeButton;
     private JLabel focusPanelImage;
 
-    public FocusWindow(String image) {
+    public FocusWindow(String image) { //Tar emot en string path i konstruktorn så att rätt bild hamnar i fönsteret.
         setContentPane(focusPanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
         setTitle("Focus");
