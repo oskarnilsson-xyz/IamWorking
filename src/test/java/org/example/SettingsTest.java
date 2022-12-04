@@ -85,8 +85,10 @@ class SettingsTest {
 
     @Test
     void thisShouldChangeTheColorOfTextBasedWindow(ActionEvent e){
+
         var textSettings = new TextSettings();
         textSettings.setColor(e);
+
 
     }
 

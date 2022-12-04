@@ -1,6 +1,4 @@
-
 currentTextColor=Black
-
 fileGraphic3=fox23.txt
 fileGraphic2=fox22.txt
 fileGraphic1=fox21.txt
@@ -21,9 +19,9 @@ textSize5=18
 speed1=1
 textSize2=12
 textSize3=14
-fileText2=src/main/resources/files/defaultText
-fileText1=src/main/resources/files/test2.txt
-fileText3=fox13.txt
+hackerText=src/main/resources/files/defaultText
+programmerText=src/main/resources/files/test2.txt
+essayText=fox13.txt
 currentFont=Source Code Pro
 settingsFile=src/main/resources/Config
 currentSpeed=14
@@ -33,5 +31,5 @@ textColor2=Green
 textColor3=Black
 backgroundcolor2=Black
 backgroundcolor1=Pink
-currentBackgroundcolor=Black
+currentBackgroundcolor=Pink
 backgroundcolor3=White
