@@ -69,14 +69,17 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
         setLocationRelativeTo(null);
         setResizable(true);
         mainHead.setFont(new Font("Serif", Font.PLAIN, 18));
-
-
+        SetHead(ConfigRead(Main.configPath, "currentCamFeed"));
         try {
             SetAnimalFeed();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        SetHead(ConfigRead(Main.configPath, "currentCamFeed"));
+
+
+
+
+
         cam1Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam1"));
@@ -197,12 +200,12 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
             }
 
         });
-        settingButton.addActionListener(e -> {
+        settingButton.addActionListener(e -> { //TODO: lägg till funktionallitet för ett setting fönster
 
         });
     }
-
-    public void SetAnimalFeed() throws IOException {//TODO Flytta till en metod som tar emot parametrar istället ocheller måste finnas ett bättre sätt
+    //TODO Flytta till en metod som tar emot parametrar istället ocheller måste finnas ett bättre sätt. Om inte annat göra till två arrayer som den kan stega igenom
+    public void SetAnimalFeed() throws IOException { //Sätter alla bilder till djur temat
         cam1Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam1")).getImage().getScaledInstance(cam1Feed.getWidth(), cam1Feed.getHeight(), Image.SCALE_DEFAULT)));
         cam2Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam2")).getImage().getScaledInstance(cam2Feed.getWidth(), cam2Feed.getHeight(), Image.SCALE_DEFAULT)));
         cam3Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam3")).getImage().getScaledInstance(cam3Feed.getWidth(), cam3Feed.getHeight(), Image.SCALE_DEFAULT)));
@@ -218,8 +221,8 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
 
 
     }
-
-    public void SetNationFeed() throws IOException { //TODO Flytta till en metod som tar emot parametrar istället ocheller måste finnas ett bättre sätt
+    //TODO Flytta till en metod som tar emot parametrar istället ocheller måste finnas ett bättre sätt. Om inte annat göra till två arrayer som den kan stega igenom
+    public void SetNationFeed() throws IOException { //Sätter alla bilder till nations temat
         cam1Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam1")).getImage().getScaledInstance(cam1Feed.getWidth(), cam1Feed.getHeight(), Image.SCALE_DEFAULT)));
         cam2Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam2")).getImage().getScaledInstance(cam2Feed.getWidth(), cam2Feed.getHeight(), Image.SCALE_DEFAULT)));
         cam3Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam3")).getImage().getScaledInstance(cam3Feed.getWidth(), cam3Feed.getHeight(), Image.SCALE_DEFAULT)));
@@ -235,8 +238,8 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
 
 
     }
-
-    public void SetHead(String camType) { //TODO clean up måste finnas ett bättre sätt
+    //TODO clean up måste finnas ett bättre sätt. Om inte annat göra till två arrayer som den kan stega igenom
+    public void SetHead(String camType) {  //Sätter alla rubriker baserat på currentCamFeed i config
 
         if (camType.equals("Nation")) {
             cam1Head.setText(ConfigReturnFileName("nationCam1"));
