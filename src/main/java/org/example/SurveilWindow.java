@@ -78,110 +78,121 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
         }
         SetHead(ConfigRead(Main.configPath, "currentCamFeed"));
         cam1Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam1"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam1"));
             }
 
-        }); cam2Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+        });
+        cam2Button.addActionListener(e -> {
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam2"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam2"));
             }
 
-        });cam3Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+        });
+        cam3Button.addActionListener(e -> {
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam3"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam3"));
             }
 
-        });cam4Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+        });
+        cam4Button.addActionListener(e -> {
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam4"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam4"));
             }
 
-        });cam5Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+        });
+        cam5Button.addActionListener(e -> {
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam5"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam5"));
             }
 
-        });cam6Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+        });
+        cam6Button.addActionListener(e -> {
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam6"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam6"));
             }
 
-        });cam7Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+        });
+        cam7Button.addActionListener(e -> {
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam7"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam7"));
             }
 
-        });cam8Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+        });
+        cam8Button.addActionListener(e -> {
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam8"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam8"));
             }
 
-        });cam9Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+        });
+        cam9Button.addActionListener(e -> {
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam9"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam9"));
             }
 
-        });cam10Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+        });
+        cam10Button.addActionListener(e -> {
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam10"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam10"));
             }
 
-        });cam11Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+        });
+        cam11Button.addActionListener(e -> {
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam11"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam11"));
             }
 
-        });cam12Button.addActionListener(e -> {
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")){
+        });
+        cam12Button.addActionListener(e -> {
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam12"));
 
             }
-            if(ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")){
+            if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam12"));
             }
 
