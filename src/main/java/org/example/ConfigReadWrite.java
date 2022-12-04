@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public interface ConfigReadWrite { //Returnerar en string baserat på en given nyckel(allt till och med = är nyckel.
@@ -40,6 +42,12 @@ public interface ConfigReadWrite { //Returnerar en string baserat på en given n
             color = null; // Not defined
         }
         return color;
+    }
+    default String ConfigReturnFileName(String settingType){
+            Path path = Paths.get(ConfigRead(Main.configPath, settingType));
+            Path fileName = path.getFileName();
+            return (fileName.toString().replaceFirst("[.][^.]+$", ""));
+
     }
 
 }
