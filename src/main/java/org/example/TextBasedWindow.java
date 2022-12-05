@@ -70,13 +70,13 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     int count = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
     int charactersWritten = 0;
 
-    public TextBasedWindow() {
+    public TextBasedWindow() {     //TODO:TextBasedWindow fetch current settings from config on construction
         setContentPane(panel1);
         setTitle("Code typer");
         setSize(500, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-
+//TODO: Add an essay textfile
 
         // Imitate settings
         //mainTextArea.setForeground(Color.blue);
@@ -91,8 +91,7 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
         goToSettingsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TextSettings settings = new TextSettings(); // PROBLEM! <--- Lös detta
-                 // Todo: Should any values be sent to settings window?
+                 Manager.TextSettingsWindow(); // :)
                 // dispose(); // Closes window
             }
         });

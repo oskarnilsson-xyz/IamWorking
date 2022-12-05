@@ -72,7 +72,6 @@ class SettingsTest {
             settings.WriteConfig("src/main/resources/Config", "currentTextColor", null);
         });
     }
-
     @RepeatedTest(5)
     void writeConfigWritesString() {
         TextSettings settings = new TextSettings();
@@ -96,8 +95,6 @@ class SettingsTest {
         subjectUnderTest.setColor(mockEvent);
         assertEquals(Color.pink,textWindow.getPanel1().getBackground());
         assertEquals(Color.pink,textWindow.getMainTextArea().getBackground());
-
-
 
     }
 }
