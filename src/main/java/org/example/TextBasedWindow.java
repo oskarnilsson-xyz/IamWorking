@@ -16,7 +16,16 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     public void setPanel1(Color color) {
         panel1.setBackground(color);
     }
+
+    public JPanel getPanel1() {
+        return panel1;
+    }
     private JPanel panel1;
+
+    public JTextArea getMainTextArea() {
+        return mainTextArea;
+    }
+
     private JTextArea mainTextArea;
     public void setFont(String f){
         mainTextArea.setFont(new Font(f,Font.PLAIN,mainTextArea.getFont().getSize()));

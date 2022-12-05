@@ -38,7 +38,7 @@ public Splashpage(){
 
             //Open settings window by creating an object of target frame.
             GraphicInterface graphicInterfaceWindow = new GraphicInterface();
-           // Settings settingsWindow = new Settings(); // lägg in en annan typ av settings
+            GraphicSettings settingsWindow = new GraphicSettings(); // lägg in en annan typ av settings
             dispose();
         }
     });
