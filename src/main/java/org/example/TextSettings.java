@@ -33,9 +33,12 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
     private JComboBox FontBox;
     TextBasedWindow TBchanges;
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till våra fönster
-    public TextSettings(TextBasedWindow textBasedWindow){
+
+    public TextSettings(TextBasedWindow textBasedWindow,JButton pink){
         TBchanges = textBasedWindow;
+        buttonBG1 = pink;
     }
+
     public TextSettings(){// konstruktor
         initializer();// method som innehåller saker vi vill ha till våra fönster
         setSize(400,460); // specifikt för detta fönster

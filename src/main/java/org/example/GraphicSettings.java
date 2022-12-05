@@ -1,8 +1,10 @@
 package org.example;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class GraphicSettings extends JFrame {
+public class GraphicSettings extends JFrame implements ActionListener {
 
     private JPanel mainPanel;
     private JComboBox graphicFile;
@@ -10,16 +12,28 @@ public class GraphicSettings extends JFrame {
     private JButton goBack;
     private JButton confirmButton;
 
-    ImageIcon foximage = new ImageIcon("src/main/resources/fox.png");
+    ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png");
 
     public GraphicSettings(){
         setContentPane(mainPanel);
-        setIconImage(foximage.getImage());
+        setIconImage(foxImage.getImage());
         setTitle("I am working");
         setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+        setSize(400,260);
         setVisible(true);
 
+        goBack.addActionListener(this);
+        confirmButton.addActionListener(this);
     }
 
-
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource().equals(goBack)){ // gör så att tillbaka knappen tar en tillbaka till start sida
+            Splashpage backToSplash = new Splashpage(); // öppnar splachpage
+            dispose();//stänger ner Settingsfönstret
+        }
+        if(e.getSource().equals(confirmButton)){
+            setVisible(false);
+        }
+    }
 }

@@ -10,7 +10,7 @@ public class GraphicInterface extends JFrame {
     private JPanel panel1;
     private JButton doStuffButton;
 
-    ImageIcon foxImage = new ImageIcon("src/main/resources/e.png"); // lade till en icon till våra fönster
+    ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till våra fönster
     public GraphicInterface() {
         setContentPane(panel1);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
