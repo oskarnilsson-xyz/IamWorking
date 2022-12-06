@@ -36,7 +36,9 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
     private JComboBox FontBox;
 
     private JComboBox fileSelect;
-
+    //TODO: Gå igenom public, private osv.
+    //TODO: Få bort "Set" metoderna från denna klass och låt fönsteret uppdateras med en metod som uppdateras mot config.
+    //TODO: Refactor Settings.form till TextSettings.form
     public TextSettings(TextBasedWindow textBasedWindow, JButton button){
         TBchanges = textBasedWindow;
         buttonBG1 = button;
@@ -179,7 +181,7 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
     public void WriteConfig(String fileName, String settingType, String writeValue) {
         ConfigWrite(fileName, settingType, writeValue);
     }
-
+//TODO: Denna kan göras om till en for-loop som använder 2 st arrays, för att reducera återanvänd kod.
     void ConfigButton() {
 
         buttonBG1.setText(ConfigRead(Main.configPath, "backgroundcolor1")); //Ta knappens text från config filen
