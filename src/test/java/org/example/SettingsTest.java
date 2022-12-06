@@ -38,16 +38,12 @@ class SettingsTest {
     void readConfigReturnsString() {
         TextSettings settings = new TextSettings();
         assertEquals("1", settings.ReadConfig("src/main/resources/Config", "speed1"));
-
-
     }
 
     @RepeatedTest(5)
     void readConfigFailsReturnString() {
         TextSettings settings = new TextSettings();
         assertNull(settings.ReadConfig("src/main/resources/Config", "speed25"));
-
-
     }
 
     @RepeatedTest(5)
@@ -90,12 +86,10 @@ class SettingsTest {
         var textWindow = new TextBasedWindow();
         var subjectUnderTest = new TextSettings(textWindow,pink);
         ActionEvent mockEvent = mock(ActionEvent.class);
-        //var mockEvent = new MockAtionEvent(pink,0,"");
         when(mockEvent.getSource()).thenReturn(pink);
         subjectUnderTest.setColor(mockEvent);
         assertEquals(Color.pink,textWindow.getPanel1().getBackground());
         assertEquals(Color.pink,textWindow.getMainTextArea().getBackground());
-
     }
 }
 

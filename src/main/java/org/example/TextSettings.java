@@ -165,7 +165,7 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
         setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         setVisible(true);
 
-    }
+    } //TODO lägg i maneger och gör så att alla använder sig utav initializer .
 
     public String ReadConfig(String filename, String settingType) {
         //ReadConfig("src/main/resources/Config", "BackgroundcolorOptions")//struktur för att kalla informationen

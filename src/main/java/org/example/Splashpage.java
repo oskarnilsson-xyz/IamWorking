@@ -13,7 +13,7 @@ public class Splashpage extends JFrame {
     private JButton graphicInterfaceButton;
     private JButton survielInterfaceButton;
 
-    public Splashpage() {
+    public Splashpage() { //TODO lägg till foton i placeholders
         setContentPane(splashPagePanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
         setTitle("I am working");
