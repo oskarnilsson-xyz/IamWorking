@@ -3,6 +3,7 @@ package org.example;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.util.Objects;
 
 public class SurveilWindow extends JFrame implements ConfigReadWrite {
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
@@ -58,6 +59,10 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     private JLabel cam12Feed;
     private JButton settingButton;
     private JLabel mainHead;
+    JLabel[] camFeedArray = {cam1Feed, cam2Feed, cam3Feed, cam4Feed, cam5Feed, cam6Feed, cam7Feed, cam8Feed, cam9Feed, cam10Feed, cam11Feed, cam12Feed};
+    JLabel[] headArray = {cam1Head, cam2Head, cam3Head, cam4Head, cam5Head, cam6Head, cam7Head, cam8Head, cam9Head, cam10Head, cam11Head, cam12Head};
+    String[] animalCamArray = {"animalCam1", "animalCam2", "animalCam3", "animalCam4", "animalCam5", "animalCam6", "animalCam7", "animalCam8", "animalCam9", "animalCam10", "animalCam11", "animalCam12"};
+    String[] nationCamArray = {"nationCam1", "nationCam2", "nationCam3", "nationCam4", "nationCam5", "nationCam6", "nationCam7", "nationCam8", "nationCam9", "nationCam10", "nationCam11", "nationCam12"};
 
     public SurveilWindow() {
         setContentPane(survielWindowPanel);
@@ -69,205 +74,141 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
         setLocationRelativeTo(null);
         setResizable(true);
         mainHead.setFont(new Font("Serif", Font.PLAIN, 18));
-        SetHead(ConfigRead(Main.configPath, "currentCamFeed"));
+        SetHead();
         try {
-            SetAnimalFeed();
+            SetFeed();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-
-
-
-
         cam1Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam1"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam1"));
             }
-
         });
         cam2Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam2"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam2"));
             }
-
         });
         cam3Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam3"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam3"));
             }
-
         });
         cam4Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam4"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam4"));
             }
-
         });
         cam5Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam5"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam5"));
             }
-
         });
         cam6Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam6"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam6"));
             }
-
         });
         cam7Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam7"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam7"));
             }
-
         });
         cam8Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam8"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam8"));
             }
-
         });
         cam9Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam9"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam9"));
             }
-
         });
         cam10Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam10"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam10"));
             }
-
         });
         cam11Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam11"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam11"));
             }
-
         });
         cam12Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam12"));
-
             }
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Nation")) {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam12"));
             }
-
         });
         settingButton.addActionListener(e -> { //TODO: lägg till funktionallitet för ett setting fönster
 
         });
     }
-    //TODO Flytta till en metod som tar emot parametrar istället ocheller måste finnas ett bättre sätt. Om inte annat göra till två arrayer som den kan stega igenom
-    public void SetAnimalFeed() throws IOException { //Sätter alla bilder till djur temat
-        cam1Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam1")).getImage().getScaledInstance(cam1Feed.getWidth(), cam1Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam2Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam2")).getImage().getScaledInstance(cam2Feed.getWidth(), cam2Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam3Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam3")).getImage().getScaledInstance(cam3Feed.getWidth(), cam3Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam4Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam4")).getImage().getScaledInstance(cam4Feed.getWidth(), cam4Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam5Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam5")).getImage().getScaledInstance(cam5Feed.getWidth(), cam5Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam6Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam6")).getImage().getScaledInstance(cam6Feed.getWidth(), cam6Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam7Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam7")).getImage().getScaledInstance(cam7Feed.getWidth(), cam7Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam8Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam8")).getImage().getScaledInstance(cam8Feed.getWidth(), cam8Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam9Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam9")).getImage().getScaledInstance(cam9Feed.getWidth(), cam9Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam10Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam10")).getImage().getScaledInstance(cam10Feed.getWidth(), cam10Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam11Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam11")).getImage().getScaledInstance(cam11Feed.getWidth(), cam11Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam12Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "animalCam12")).getImage().getScaledInstance(cam12Feed.getWidth(), cam12Feed.getHeight(), Image.SCALE_DEFAULT)));
 
-
-    }
-    //TODO Flytta till en metod som tar emot parametrar istället ocheller måste finnas ett bättre sätt. Om inte annat göra till två arrayer som den kan stega igenom
-    public void SetNationFeed() throws IOException { //Sätter alla bilder till nations temat
-        cam1Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam1")).getImage().getScaledInstance(cam1Feed.getWidth(), cam1Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam2Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam2")).getImage().getScaledInstance(cam2Feed.getWidth(), cam2Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam3Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam3")).getImage().getScaledInstance(cam3Feed.getWidth(), cam3Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam4Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam4")).getImage().getScaledInstance(cam4Feed.getWidth(), cam4Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam5Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam5")).getImage().getScaledInstance(cam5Feed.getWidth(), cam5Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam6Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam6")).getImage().getScaledInstance(cam6Feed.getWidth(), cam6Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam7Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam7")).getImage().getScaledInstance(cam7Feed.getWidth(), cam7Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam8Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam8")).getImage().getScaledInstance(cam8Feed.getWidth(), cam8Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam9Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam9")).getImage().getScaledInstance(cam9Feed.getWidth(), cam9Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam10Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam10")).getImage().getScaledInstance(cam10Feed.getWidth(), cam10Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam11Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam11")).getImage().getScaledInstance(cam11Feed.getWidth(), cam11Feed.getHeight(), Image.SCALE_DEFAULT)));
-        cam12Feed.setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, "nationCam12")).getImage().getScaledInstance(cam12Feed.getWidth(), cam12Feed.getHeight(), Image.SCALE_DEFAULT)));
-
-
-    }
-    //TODO clean up måste finnas ett bättre sätt. Om inte annat göra till två arrayer som den kan stega igenom
-    public void SetHead(String camType) {  //Sätter alla rubriker baserat på currentCamFeed i config
-
-        if (camType.equals("Nation")) {
-            cam1Head.setText(ConfigReturnFileName("nationCam1"));
-            cam2Head.setText(ConfigReturnFileName("nationCam2"));
-            cam3Head.setText(ConfigReturnFileName("nationCam3"));
-            cam4Head.setText(ConfigReturnFileName("nationCam4"));
-            cam5Head.setText(ConfigReturnFileName("nationCam5"));
-            cam6Head.setText(ConfigReturnFileName("nationCam6"));
-            cam7Head.setText(ConfigReturnFileName("nationCam7"));
-            cam8Head.setText(ConfigReturnFileName("nationCam8"));
-            cam9Head.setText(ConfigReturnFileName("nationCam9"));
-            cam10Head.setText(ConfigReturnFileName("nationCam10"));
-            cam11Head.setText(ConfigReturnFileName("nationCam11"));
-            cam12Head.setText(ConfigReturnFileName("nationCam12"));
+    //TODO Finns kanske ett bättre sätt?
+    public void SetFeed() throws IOException { //Sätter alla bilder till djur temat eller nations temat baserat på config
+        String currentFeed = ConfigRead(Main.configPath, "currentCamFeed");
+        if (Objects.equals(currentFeed, "Animal")) {
+            for (int i = 0; i < 12; i++) {
+                camFeedArray[i].setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, animalCamArray[i])).getImage().getScaledInstance(camFeedArray[i].getWidth(), camFeedArray[i].getHeight(), Image.SCALE_DEFAULT)));
+            }
         }
-        if (camType.equals("Animal")) {
-            cam1Head.setText(ConfigReturnFileName("animalCam1"));
-            cam2Head.setText(ConfigReturnFileName("animalCam2"));
-            cam3Head.setText(ConfigReturnFileName("animalCam3"));
-            cam4Head.setText(ConfigReturnFileName("animalCam4"));
-            cam5Head.setText(ConfigReturnFileName("animalCam5"));
-            cam6Head.setText(ConfigReturnFileName("animalCam6"));
-            cam7Head.setText(ConfigReturnFileName("animalCam7"));
-            cam8Head.setText(ConfigReturnFileName("animalCam8"));
-            cam9Head.setText(ConfigReturnFileName("animalCam9"));
-            cam10Head.setText(ConfigReturnFileName("animalCam10"));
-            cam11Head.setText(ConfigReturnFileName("animalCam11"));
-            cam12Head.setText(ConfigReturnFileName("animalCam12"));
+        if (Objects.equals(currentFeed, "Nation")) {
+            for (int i = 0; i < 12; i++) {
+                camFeedArray[i].setIcon(new ImageIcon(new ImageIcon(ConfigRead(Main.configPath, nationCamArray[i])).getImage().getScaledInstance(camFeedArray[i].getWidth(), camFeedArray[i].getHeight(), Image.SCALE_DEFAULT)));
+            }
+        }
+    }
+
+    //TODO finns kanske ett bättre sätt?
+    public void SetHead() {  //Sätter alla rubriker baserat på currentCamFeed i config
+        String currentFeed = ConfigRead(Main.configPath, "currentCamFeed");
+        if (Objects.equals(currentFeed, "Animal")) {
+            for (int i = 0; i < 12; i++) {
+                headArray[i].setText(ConfigReturnFileName(animalCamArray[i]));
+            }
+        }
+        if (Objects.equals(currentFeed, "Nation")) {
+            for (int i = 0; i < 12; i++) {
+                headArray[i].setText(ConfigReturnFileName(nationCamArray[i]));
+            }
         }
     }
 }
