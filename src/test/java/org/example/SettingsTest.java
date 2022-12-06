@@ -1,11 +1,12 @@
 package org.example;
 
 
-
 import javax.swing.*;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+
 import java.io.IOException;
 
 import java.awt.*;
@@ -16,20 +17,22 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-class SettingsTest {
+class TextSettingsTest {
 
 
     @RepeatedTest(5)
     void readConfigFilenameIsNull() {
-        Settings settings = new Settings();
+        TextSettings settings = new TextSettings();
         Assertions.assertThrows(RuntimeException.class, () -> {
             settings.ReadConfig(null, "fox");
 
         });
 
-    } @RepeatedTest(5)
+    }
+
+    @RepeatedTest(5)
     void readConfigSettingTypeIsNull() {
-        Settings settings = new Settings();
+        TextSettings settings = new TextSettings();
         Assertions.assertThrows(RuntimeException.class, () -> {
             settings.ReadConfig("src/main/resources/Config", null);
 
@@ -39,7 +42,7 @@ class SettingsTest {
 
     @RepeatedTest(5)
     void readConfigReturnsString() {
-        Settings settings = new Settings();
+        TextSettings settings = new TextSettings();
         assertEquals("1", settings.ReadConfig("src/main/resources/Config", "speed1"));
 
 
@@ -47,7 +50,7 @@ class SettingsTest {
 
     @RepeatedTest(5)
     void readConfigFailsReturnString() {
-        Settings settings = new Settings();
+        TextSettings settings = new TextSettings();
         assertNull(settings.ReadConfig("src/main/resources/Config", "speed25"));
 
 
@@ -55,22 +58,24 @@ class SettingsTest {
 
     @RepeatedTest(5)
     void writeConfig() {
-        Settings settings = new Settings();
+        TextSettings settings = new TextSettings();
         Assertions.assertThrows(RuntimeException.class, () -> {
             settings.WriteConfig(null, "fox", "fox");
         });
     }
+
     @RepeatedTest(5)
     void writeConfigSettingTypeIsNull() {
-        Settings settings = new Settings();
+        TextSettings settings = new TextSettings();
         Assertions.assertThrows(RuntimeException.class, () -> {
             settings.WriteConfig("src/main/resources/Config", null, "fox");
         });
 
     }
+
     @RepeatedTest(5)
     void writeConfigWriteValueIsNull() {
-        Settings settings = new Settings();
+        TextSettings settings = new TextSettings();
         Assertions.assertThrows(RuntimeException.class, () -> {
             settings.WriteConfig("src/main/resources/Config", "currentTextColor", null);
         });
@@ -78,7 +83,7 @@ class SettingsTest {
 
     @RepeatedTest(5)
     void writeConfigWritesString() {
-        Settings settings = new Settings();
+        TextSettings settings = new TextSettings();
         if (!settings.ReadConfig("src/main/resources/Config", "currentTextColor").equals("Green")) {
             settings.WriteConfig("src/main/resources/Config", "currentTextColor", "Green");
             assertEquals("Green", settings.ReadConfig("src/main/resources/Config", "currentTextColor"));
@@ -86,20 +91,19 @@ class SettingsTest {
             settings.WriteConfig("src/main/resources/Config", "currentTextColor", "Black");
             assertEquals("Black", settings.ReadConfig("src/main/resources/Config", "currentTextColor"));
         }
+    }
 
 
-    @Test
-
-    void thisShouldChangeTheColorOfTextBasedWindow(){
+    @RepeatedTest(5)
+    void thisShouldChangeTheColorOfTextBasedWindow() {
         JButton button = new JButton("Pink");
         TextBasedWindow textWindow = new TextBasedWindow();
-        var textSettings = new TextSettings(textWindow,button);
+        var textSettings = new TextSettings(textWindow, button);
         ActionEvent mockEvent = mock(ActionEvent.class);
         when(mockEvent.getSource()).thenReturn(button);
         textSettings.setColor(mockEvent);
-        assertEquals(Color.pink,textWindow.getPanel1().getBackground());
-        assertEquals(Color.pink,textWindow.getMainTextArea().getBackground());
+        assertEquals(Color.pink, textWindow.getPanel1().getBackground());
+        assertEquals(Color.pink, textWindow.getMainTextArea().getBackground());
 
     }
-
 }

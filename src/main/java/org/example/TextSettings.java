@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 
 public class TextSettings extends JFrame implements ActionListener, ConfigReadWrite {
-
+    public JSlider writingSpeed;
     TextBasedWindow TBchanges;
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till våra fönster
     private JPanel mainPanel;
