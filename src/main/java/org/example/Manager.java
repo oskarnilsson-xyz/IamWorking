@@ -1,32 +1,35 @@
 package org.example;
 
-public class Manager implements ConfigReadWrite{
+public class Manager implements ConfigReadWrite {
 
     public static TextBasedWindow textBasedWindow;
     public static GraphicInterface graphicInterfaceWindow;
-    public Manager(){
+
+    public static SurveilWindow survielWindow;
+
+    public Manager() {
 
         var splashPageWindow = new Splashpage();
     }
-    public static void TextSettingsWindow(){
+
+    public static void TextSettingsWindow() {
         var text = new TextSettings(textBasedWindow);
     }
-    public static void TextWindowStart(){
-        // Hohoho, merry Christmas!
-        // Last Christmas, I gave you my heart...
 
+    public static void TextWindowStart() {
         textBasedWindow = new TextBasedWindow();
+    }
 
+    public static void SurvielWindowStart() {
+        survielWindow = new SurveilWindow();
     }
 
 
-
-
-
-    public static void GraphicSettingsWindow(){
+    public static void GraphicSettingsWindow() {
         //var text = new GraphicSettings(graphicInterfaceWindow);  //Implementera när graphic interface
     }
-    public static void GraphicInterfaceWindowStart(){
+
+    public static void GraphicInterfaceWindowStart() {
         // Hohoho, merry christmas!
 
         graphicInterfaceWindow = new GraphicInterface();
