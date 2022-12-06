@@ -43,8 +43,8 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     private JButton uploadFileButton;
     private JButton enterTextButton;
 
-
-
+//TODO: Gå igenom public, private osv.
+//TODO: Klassen kommer behövas städas upp efter vi har fått in att allt uppdateras från config,
     // Read text from file
     public static String readFileAsString(String fileName){
         try {
@@ -67,8 +67,8 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     int charactersWritten = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
 
 
-    public TextBasedWindow() {     //TODO:TextBasedWindow fetch current settings from config on construction
-        setContentPane(panel1);
+    public TextBasedWindow() {     //TODO:TextBasedWindow fetch current settings from config on construction och gör det
+        setContentPane(panel1);    //TODO: och gör det i en separat metod så att vi kan kalla på den vid behov.
         setTitle("Code typer");
         setSize(500, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

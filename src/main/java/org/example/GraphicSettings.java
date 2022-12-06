@@ -15,7 +15,7 @@ public class GraphicSettings extends JFrame implements ActionListener {
     GraphicInterface graphics;
 
     ImageIcon foximage = new ImageIcon("src/main/resources/fox.png");
-
+    //TODO: Gå igenom public, private osv.
     public GraphicSettings(){
         setContentPane(mainPanel);
         setIconImage(foximage.getImage());

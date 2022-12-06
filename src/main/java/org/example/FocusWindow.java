@@ -1,7 +1,7 @@
 package org.example;
 
 import javax.swing.*;
-
+//TODO: Gå igenom public, private osv.
 
 public class FocusWindow extends JFrame {
     private JPanel focusPanel;

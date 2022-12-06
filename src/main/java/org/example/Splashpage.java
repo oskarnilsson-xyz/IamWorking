@@ -13,7 +13,7 @@ public class Splashpage extends JFrame {
     private JButton graphicInterfaceButton;
 
     private JButton survielInterfaceButton;
-
+    //TODO: Gå igenom public, private osv.
     public Splashpage() {
         setContentPane(splashPagePanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
@@ -23,7 +23,7 @@ public class Splashpage extends JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
-
+//TODO: Spelar det någon roll om det är en MouseListener iställer för action
 
         textInterfaceButton.addMouseListener(new MouseAdapter() {
             @Override

@@ -63,7 +63,8 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     JLabel[] headArray = {cam1Head, cam2Head, cam3Head, cam4Head, cam5Head, cam6Head, cam7Head, cam8Head, cam9Head, cam10Head, cam11Head, cam12Head};
     String[] animalCamArray = {"animalCam1", "animalCam2", "animalCam3", "animalCam4", "animalCam5", "animalCam6", "animalCam7", "animalCam8", "animalCam9", "animalCam10", "animalCam11", "animalCam12"};
     String[] nationCamArray = {"nationCam1", "nationCam2", "nationCam3", "nationCam4", "nationCam5", "nationCam6", "nationCam7", "nationCam8", "nationCam9", "nationCam10", "nationCam11", "nationCam12"};
-
+    //TODO: Gå igenom public, private osv.
+    //TODO: Waterhole1 filen är felstavad, bråkade när jag försökte ändra den.
     public SurveilWindow() {
         setContentPane(survielWindowPanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
@@ -80,7 +81,7 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
+//TODO stoppa in if satserna i en metod, för att reducera repetition av kod.
         cam1Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam1"));

@@ -9,7 +9,7 @@ import java.awt.event.MouseEvent;
 public class GraphicInterface extends JFrame {
     private JPanel panel1;
     private JButton doStuffButton;
-
+    //TODO: Gå igenom public, private osv.
     ImageIcon foxImage = new ImageIcon("src/main/resources/e.png"); // lade till en icon till våra fönster
     public GraphicInterface() {
         setContentPane(panel1);
