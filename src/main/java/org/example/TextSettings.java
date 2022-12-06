@@ -33,15 +33,13 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
     private JLabel fileType;
     private JComboBox FontBox;
 
-    public TextSettings(){
-
-    }
+    public TextSettings(){}
     public TextSettings(TextBasedWindow textBasedWindow,JButton pink){
         TBchanges = textBasedWindow;
         buttonBG1 = pink;
     }
-    public TextSettings(TextBasedWindow textBasedWindow) {// konstruktor
-        TBchanges = textBasedWindow;
+    public TextSettings(TextBasedWindow textWindow) { // konstruktor
+        TBchanges = textWindow;
         initializer();// method som innehåller saker vi vill ha till våra fönster
         setSize(400, 460); // specifikt för detta fönster
 
