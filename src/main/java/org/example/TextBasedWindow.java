@@ -1,5 +1,6 @@
 package org.example;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -80,6 +81,8 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
             @Override
             public void actionPerformed(ActionEvent e) { // On button click, import a text file to generate text from
                 JFileChooser fileChooser = new JFileChooser();
+                FileNameExtensionFilter textFilter = new FileNameExtensionFilter("TEXT FILES", "txt", "text"); // Skapar ett filter som gör att vi bara kan läsa in textfiler
+                fileChooser.setFileFilter(textFilter); // Använd filtret på våran fileChooser
                 int uploadedFile = fileChooser.showOpenDialog(null); // Opens a window where the user can select a file
                 if (uploadedFile == JFileChooser.APPROVE_OPTION) { // If user selected a file
                     File filePath = new File(fileChooser.getSelectedFile().getAbsolutePath());
