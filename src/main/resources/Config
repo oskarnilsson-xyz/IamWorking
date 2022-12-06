@@ -1,4 +1,4 @@
-#Tue Dec 06 12:16:33 CET 2022
+#Tue Dec 06 12:22:27 CET 2022
 hackerText=src/main/resources/files/hackerText
 fileGraphic3=fox23.txt
 fileGraphic2=fox22.txt
@@ -20,7 +20,7 @@ nationCam6=src/main/resources/cams/nationcams/latvia.gif
 nationCam5=src/main/resources/cams/nationcams/italy.gif
 currentFont=Source Code Pro
 nationCam4=src/main/resources/cams/nationcams/germany.gif
-currentSpeed=8
+currentSpeed=16
 currentCamFeed=Animal
 nationCam9=src/main/resources/cams/nationcams/norway.gif
 nationCam8=src/main/resources/cams/nationcams/netherlands.gif
@@ -59,4 +59,4 @@ textColor2=Green
 textColor3=Black
 nationCam10=src/main/resources/cams/nationcams/serbia.gif
 Camfeed2=Nation
-currentBackgroundcolor=Pink
+currentBackgroundcolor=Black
