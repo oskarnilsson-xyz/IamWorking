@@ -7,23 +7,20 @@ import java.awt.event.MouseEvent;
 public class Splashpage extends JFrame {
 
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
-
-    private JPanel splashPagePanel;
+    private JPanel splashpagePanel;
     private JButton textInterfaceButton;
     private JButton graphicInterfaceButton;
-
     private JButton survielInterfaceButton;
 
-    public Splashpage() {
-        setContentPane(splashPagePanel);
-        setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
+    public Splashpage() { //TODO lägg till bilder
+        setContentPane(splashpagePanel);
         setTitle("I am working");
         setSize(720, 400);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
-        setLocationRelativeTo(null);
         setResizable(false);
-
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setIconImage(foxImage.getImage());
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         textInterfaceButton.addMouseListener(new MouseAdapter() {
             @Override
@@ -38,10 +35,7 @@ public class Splashpage extends JFrame {
             @Override
             public void mouseReleased(MouseEvent graphicInterfaceSelected) {
                 super.mouseReleased(graphicInterfaceSelected);
-
-                //Open settings window by creating an object of target frame.
-                GraphicInterface graphicInterfaceWindow = new GraphicInterface();
-                // Settings settingsWindow = new Settings(); // lägg in en annan typ av settings
+                Manager.GraphicInterfaceWindowStart();
                 dispose();
             }
         });
@@ -54,6 +48,4 @@ public class Splashpage extends JFrame {
             }
         });
     }
-
-
 }

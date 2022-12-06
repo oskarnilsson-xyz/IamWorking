@@ -2,6 +2,8 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -66,7 +68,7 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
 
     public SurveilWindow() {
         setContentPane(survielWindowPanel);
-        setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
+        setIconImage(foxImage.getImage()); // lägger till icon till fönstret
         setTitle("Surviel");
         setSize(1260, 800);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -177,8 +179,12 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam12"));
             }
         });
-        settingButton.addActionListener(e -> { //TODO: lägg till funktionallitet för ett setting fönster
-
+        //settingButton.addActionListener(e -> {Manager.SurveilSettingsWindow();});
+        settingButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Manager.SurveilSettingsWindow();//TODO fixa så settings fönster öppnas i surveilWindow
+            }
         });
     }
 

@@ -39,7 +39,7 @@
               <text value="Choose file type"/>
             </properties>
           </component>
-          <component id="9d85f" class="javax.swing.JButton" binding="goBack">
+          <component id="9d85f" class="javax.swing.JButton" binding="goBack2">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -48,7 +48,7 @@
               <text value="Back to  Splachpage"/>
             </properties>
           </component>
-          <component id="ec4fa" class="javax.swing.JButton" binding="confirmButton" default-binding="true">
+          <component id="ec4fa" class="javax.swing.JButton" binding="confirmButton2">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>

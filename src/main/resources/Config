@@ -1,4 +1,4 @@
-#Tue Dec 06 12:22:27 CET 2022
+#Tue Dec 06 20:31:13 CET 2022
 hackerText=src/main/resources/files/hackerText
 fileGraphic3=fox23.txt
 fileGraphic2=fox22.txt
@@ -8,8 +8,8 @@ font1=Arial
 font3=Source Code Pro
 currentFileText=programmerText
 currentTextSize=12
-animalCam11=src/main/resources/cams/animalcams/waterhole2.gif
 programmerText=src/main/resources/files/programmingText.txt
+animalCam11=src/main/resources/cams/animalcams/waterhole2.gif
 animalCam10=src/main/resources/cams/animalcams/waterhol1.gif
 nationCam3=src/main/resources/cams/nationcams/france.gif
 essayText=src/main/resources/files/essayText.txt
@@ -18,16 +18,16 @@ nationCam1=src/main/resources/cams/nationcams/croatia.gif
 nationCam7=src/main/resources/cams/nationcams/lithuania.gif
 nationCam6=src/main/resources/cams/nationcams/latvia.gif
 nationCam5=src/main/resources/cams/nationcams/italy.gif
-currentFont=Source Code Pro
+currentFont=Times New Roman
 nationCam4=src/main/resources/cams/nationcams/germany.gif
-currentSpeed=16
+currentSpeed=20
 currentCamFeed=Animal
 nationCam9=src/main/resources/cams/nationcams/norway.gif
 nationCam8=src/main/resources/cams/nationcams/netherlands.gif
 backgroundcolor2=Black
 backgroundcolor1=Pink
 backgroundcolor3=White
-currentTextColor=Green
+currentTextColor=White
 animalCam9=src/main/resources/cams/animalcams/snowowlnest.gif
 CamFeed1=Animal
 textSize6=20

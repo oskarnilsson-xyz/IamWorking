@@ -14,20 +14,18 @@ import java.nio.file.*;
 
 public class TextBasedWindow extends JFrame implements ConfigReadWrite{
 
-    public void setPanel1(Color color) {
+    ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
+    private JPanel panel1;
+    public void setBPanel1(Color color) {
         panel1.setBackground(color);
     }
-
     public JPanel getPanel1() {
         return panel1;
     }
-    private JPanel panel1;
-
+    private JTextArea mainTextArea;
     public JTextArea getMainTextArea() {
         return mainTextArea;
     }
-
-    private JTextArea mainTextArea;
     public void setFont(String f){
         mainTextArea.setFont(new Font(f,Font.PLAIN,mainTextArea.getFont().getSize()));
     }
@@ -42,7 +40,6 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     private JButton goToSettingsButton;
     private JButton uploadFileButton;
     private JButton enterTextButton;
-
 
 
     // Read text from file
@@ -73,6 +70,8 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
         setSize(500, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
+        setLocationRelativeTo(null);
+        setIconImage(foxImage.getImage());
 
         mainTextArea.setBackground(ConfigColorFinder("currentBackgroundcolor"));// sätter färgen via Config filen
         panel1.setBackground(ConfigColorFinder("currentBackgroundcolor"));
