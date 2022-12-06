@@ -7,35 +7,45 @@ import java.awt.event.*;
 
 
 public class TextSettings extends JFrame implements ActionListener, ConfigReadWrite {
-    public JSlider writingSpeed;
+
     TextBasedWindow TBchanges;
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till våra fönster
     private JPanel mainPanel;
-    private JPanel center;
-    private JPanel bottom;
     private JPanel topp;
+
+    private JPanel bottom;
+    private JPanel center;
+
+    private JLabel fileType;
+    private JLabel BKcolor;
+    private JLabel Tcolor;
+    private JLabel speed;
+    private JLabel textSize;
+
     private JButton goBack;
-    private JLabel label1;
+
     private JButton buttonBG1;
     private JButton buttonBG2;
     private JButton buttonBG3;
-    private JComboBox fileSelect;
     private JButton confirmButton;
     private JSlider fontsize;
-    private JLabel speed;
-    private JLabel textSize;
-    private JLabel BKcolor;
-    private JLabel Tcolor;
     private JButton buttonTextColor1;
     private JButton buttonTextColor2;
     private JButton buttonTextColor3;
     private JButton buttonTextColor4;
-    private JLabel fileType;
     private JComboBox FontBox;
 
+    private JComboBox fileSelect;
 
-    public TextSettings(TextBasedWindow textBasedWindow) {// konstruktor
+    public TextSettings(TextBasedWindow textBasedWindow, JButton button){
         TBchanges = textBasedWindow;
+        buttonBG1 = button;
+    }
+    public TextSettings(){
+    }
+    public TextSettings(TextBasedWindow textBasedWindow){// konstruktor
+        TBchanges = textBasedWindow;
+
         initializer();// method som innehåller saker vi vill ha till våra fönster
         setSize(400, 460); // specifikt för detta fönster
 

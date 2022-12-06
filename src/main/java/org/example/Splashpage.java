@@ -11,6 +11,7 @@ public class Splashpage extends JFrame {
     private JPanel splashPagePanel;
     private JButton textInterfaceButton;
     private JButton graphicInterfaceButton;
+
     private JButton survielInterfaceButton;
 
     public Splashpage() {
@@ -53,5 +54,6 @@ public class Splashpage extends JFrame {
             }
         });
     }
+
 
 }
