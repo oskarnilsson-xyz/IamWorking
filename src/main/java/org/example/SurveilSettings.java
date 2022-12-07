@@ -35,7 +35,7 @@ public class SurveilSettings extends JFrame implements ActionListener {
         if(e.getSource().equals(chooseColorButton)){
             JColorChooser chooseColor = new JColorChooser();
             Color color = chooseColor.showDialog(null,"Color choice",Color.WHITE);
-            surveilensWindow.setBackground(color);
+            surveilensWindow.getSurveilWindowPanel().setBackground(color);
         }
         if (e.getSource().equals(goBack3)){
             Splashpage backToSplash = new Splashpage(); // öppnar splachpage

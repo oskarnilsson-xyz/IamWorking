@@ -11,7 +11,12 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
 
     private JButton cam1Button;
+
     private JPanel surveilWindowPanel;
+    public JPanel getSurveilWindowPanel() {
+        return surveilWindowPanel;
+    }//gör en getter så jag kan se ifall de sker en förändring
+
     private JLabel cam1Feed;
     private JLabel cam1Head;
     private JButton cam2Button;
