@@ -32,6 +32,23 @@ class TextBasedWindowTest {
     */
 
     @Test
+    void doesTextForTestingFileExist() {
+        File file = new File("src/main/resources/textForTesting.txt");
+        assertTrue(file.exists());
+    }
+
+    //Bestest test
+    //BestTestEverForever
+    @Test
+    void testIfTextForTestingFileIsReadAsString() throws IOException{
+        TextBasedWindow textWindow = new TextBasedWindow();
+        String våranText = textWindow.readFileAsString("src/main/resources/textForTesting.txt");
+        String expectedText = "package org.example;";
+        assertEquals(expectedText,våranText);
+    }
+
+
+    @Test
     void readprogrammingTextAsStringSuccess() throws IOException {
         String pathToFile = new String(Files.readAllBytes(Paths.get(this.filePath + programmingText)));
     }

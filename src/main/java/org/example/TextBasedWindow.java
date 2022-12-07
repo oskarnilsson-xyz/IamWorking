@@ -43,7 +43,7 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
 //TODO: Klassen kommer behövas städas upp efter vi har fått in att allt uppdateras från config,
 
     // Read text from file
-    public static String readFileAsString(String fileName){
+    public String readFileAsString(String fileName){
         try {
             String data;
             data = new String(Files.readAllBytes(Paths.get(fileName)));
