@@ -5,37 +5,39 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GraphicSettings extends JFrame implements ActionListener {
-
+    ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
     private JPanel mainPanel;
     private JComboBox graphicFile;
     private JLabel chooseFile;
-    private JButton goBack;
-    private JButton confirmButton;
+    private JButton goBack2;
+    private JButton confirmButton2;
+    GraphicInterface graphics; //object av fönstret som inställningarna tillhör
 
-    GraphicInterface graphics;
-
-    ImageIcon foximage = new ImageIcon("src/main/resources/fox.png");
-    //TODO: Gå igenom public, private osv.
-    public GraphicSettings(){
+    public GraphicSettings() {}
+    public GraphicSettings(GraphicInterface graphics){
+        this.graphics = graphics;
         setContentPane(mainPanel);
-        setIconImage(foximage.getImage());
-        setTitle("I am working");
-        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-        setSize(400,200);
+        setTitle("Settings");
+        setLocationRelativeTo(null);
         setVisible(true);
-        goBack.addActionListener(this);
-        confirmButton.addActionListener(this);
+        setSize(400,200);
+        setIconImage(foxImage.getImage());
+        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+
+
+        goBack2.addActionListener(this);
+        confirmButton2.addActionListener(this);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(goBack)){
+        if (e.getSource().equals(goBack2)){
             Splashpage backToSplash = new Splashpage(); // öppnar splachpage
             graphics.dispose();
             dispose();//stänger ner Settingsfönstret
         }
-        if(e.getSource().equals(confirmButton)){
+        if(e.getSource().equals(confirmButton2)){
             setVisible(false);
         }
     }

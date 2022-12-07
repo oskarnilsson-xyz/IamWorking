@@ -2,24 +2,28 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class GraphicInterface extends JFrame {
-    private JPanel panel1;
-    private JButton doStuffButton;
-    //TODO: Gå igenom public, private osv.
-    ImageIcon foxImage = new ImageIcon("src/main/resources/e.png"); // lade till en icon till våra fönster
+    ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
+    private JPanel mainPanel;
+    private JButton SettingsButton;
     public GraphicInterface() {
-        setContentPane(panel1);
-        setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
+        setContentPane(mainPanel);
+        setSize(500, 550);
         setTitle("I am working");
-        setSize(600, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
-        setLocationRelativeTo(null);
         setResizable(false);
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setIconImage(foxImage.getImage());
         Component doStuff;
+        SettingsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Manager.GraphicSettingsWindow();
+            }
+        });
     }
 }
