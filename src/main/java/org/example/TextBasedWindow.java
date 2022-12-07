@@ -14,20 +14,18 @@ import java.nio.file.*;
 
 public class TextBasedWindow extends JFrame implements ConfigReadWrite{
 
-    public void setPanel1(Color color) {
+    ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
+    private JPanel panel1;
+    public void setBPanel1(Color color) {
         panel1.setBackground(color);
     }
-
     public JPanel getPanel1() {
         return panel1;
     }
-    private JPanel panel1;
-
+    private JTextArea mainTextArea;
     public JTextArea getMainTextArea() {
         return mainTextArea;
     }
-
-    private JTextArea mainTextArea;
     public void setFont(String f){
         mainTextArea.setFont(new Font(f,Font.PLAIN,mainTextArea.getFont().getSize()));
     }
@@ -43,7 +41,8 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     private JButton uploadFileButton;
     private JButton enterTextButton;
 
-
+//TODO: Gå igenom public, private osv.
+//TODO: Klassen kommer behövas städas upp efter vi har fått in att allt uppdateras från config,
 
     // Read text from file
     public static String readFileAsString(String fileName){
@@ -58,28 +57,23 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
             throw new RuntimeException(e);
         }
     }
-    // Old way. Now the textToLoad is loaded from confile file & changed via settings window
-    //String defaultText = readFileAsString("src/main/resources/files/defaultText");  // A default text to generate from
-    //String textToLoad = defaultText; // Todo: Add logic to determine what to generate text from(Default, uploaded file, etc)
+
     String textToLoad;
 
     // Text generation variables
     char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
     int generationSpeed = Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed")); // Antalet tecken som ska generaras vid varje knapptryckning
-    int count = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
-    int charactersWritten = 0;
+    int charactersWritten = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
 
-    public TextBasedWindow() {     //TODO:TextBasedWindow fetch current settings from config on construction
-        setContentPane(panel1);
+
+    public TextBasedWindow() {     //TODO:TextBasedWindow fetch current settings from config on construction och gör det
+        setContentPane(panel1);    //TODO: och gör det i en separat metod så att vi kan kalla på den vid behov.
         setTitle("Code typer");
         setSize(500, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-//TODO: Add an essay textfile
-
-        // Imitate settings
-        //mainTextArea.setForeground(Color.blue);
-        //mainTextArea.setBackground(Color.lightGray);
+        setLocationRelativeTo(null);
+        setIconImage(foxImage.getImage());
 
         mainTextArea.setBackground(ConfigColorFinder("currentBackgroundcolor"));// sätter färgen via Config filen
         panel1.setBackground(ConfigColorFinder("currentBackgroundcolor"));
@@ -91,20 +85,18 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
             @Override
             public void actionPerformed(ActionEvent e) {
                  Manager.TextSettingsWindow(); // :)
-                // dispose(); // Closes window
             }
         });
         uploadFileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) { // On button click, import a text file to generate text from
                 JFileChooser fileChooser = new JFileChooser();
-                //FileNameExtensionFilter textFilter = new FileNameExtensionFilter("TEXT FILES", "txt", "text"); // Skapar ett filter som gör att vi bara kan läsa in textfiler
-                //fileChooser.setFileFilter(textFilter); // Använd filtret på våran fileChooser
+                FileNameExtensionFilter textFilter = new FileNameExtensionFilter("TEXT FILES", "txt", "text"); // Skapar ett filter som gör att vi bara kan läsa in textfiler
+                fileChooser.setFileFilter(textFilter); // Använd filtret på våran fileChooser
                 int uploadedFile = fileChooser.showOpenDialog(null); // Opens a window where the user can select a file
                 if (uploadedFile == JFileChooser.APPROVE_OPTION) { // If user selected a file
                     File filePath = new File(fileChooser.getSelectedFile().getAbsolutePath());
                     textToLoad = readFileAsString(String.valueOf(filePath)); // Select the new file as the textToLoad
-                    count = 0; // Reset reset
                 }
             }
         });
@@ -126,7 +118,6 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
                    På så sätt kan vi generera text vid knapptryckning endast med de tecken som vi vill ska vara giltiga, vilket vi definerar i keyInputs */
                 if (new String(keyInputs).indexOf(e.getKeyChar()) >= 0) {
                     System.out.println(e.getKeyChar());
-                    count++;
                     charactersWritten += generationSpeed;
                     if(charactersWritten >= textToLoad.length()) { // If the number of characters that should be written is greater than our total text length, restart from 0
                         charactersWritten = 0;
