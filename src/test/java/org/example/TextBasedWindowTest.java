@@ -30,7 +30,6 @@ class TextBasedWindowTest {
         this.filePath = "src/main/resources/files/programmingText.txt";
     }
     */
-
     @Test
     void readprogrammingTextAsStringSuccess() throws IOException {
         String pathToFile = new String(Files.readAllBytes(Paths.get(this.filePath + programmingText)));

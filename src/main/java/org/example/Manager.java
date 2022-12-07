@@ -9,6 +9,7 @@ public class Manager implements ConfigReadWrite { //Denna klassen ska agera diri
     public static SurveilWindow survielWindow;
     public static Splashpage splashPageWindow;
 
+
     public Manager() {
 
         var splashPageWindow = new Splashpage();
@@ -20,7 +21,6 @@ public class Manager implements ConfigReadWrite { //Denna klassen ska agera diri
     } public static void GraphicSettingsWindow() {
         var text = new GraphicSettings(graphicInterfaceWindow);  //Implementera när graphic interface
     }
-
     public static void TextWindowStart() {
         textBasedWindow = new TextBasedWindow();
     }
