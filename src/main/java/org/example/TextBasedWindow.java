@@ -1,5 +1,6 @@
 package org.example;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,11 +18,9 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
         panel1.setBackground(color);
     }
 
-
     public JPanel getPanel1() {
         return panel1;
     }
-
     private JPanel panel1;
 
     public JTextArea getMainTextArea() {
@@ -46,7 +45,7 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
 
 
 
-    // File-handling for default file
+    // Read text from file
     public static String readFileAsString(String fileName){
         try {
             String data = "";
@@ -99,6 +98,8 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
             @Override
             public void actionPerformed(ActionEvent e) { // On button click, import a text file to generate text from
                 JFileChooser fileChooser = new JFileChooser();
+                //FileNameExtensionFilter textFilter = new FileNameExtensionFilter("TEXT FILES", "txt", "text"); // Skapar ett filter som gör att vi bara kan läsa in textfiler
+                //fileChooser.setFileFilter(textFilter); // Använd filtret på våran fileChooser
                 int uploadedFile = fileChooser.showOpenDialog(null); // Opens a window where the user can select a file
                 if (uploadedFile == JFileChooser.APPROVE_OPTION) { // If user selected a file
                     File filePath = new File(fileChooser.getSelectedFile().getAbsolutePath());
@@ -128,7 +129,7 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
                     count++;
                     charactersWritten += generationSpeed;
                     if(charactersWritten >= textToLoad.length()) { // If the number of characters that should be written is greater than our total text length, restart from 0
-                        count=0;
+                        charactersWritten = 0;
                     }
                     mainTextArea.setText(textToLoad.substring(0, charactersWritten));
                 }

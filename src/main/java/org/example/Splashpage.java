@@ -23,6 +23,7 @@ public class Splashpage extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
 
+
         textInterfaceButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent textInterfaceSelected) {

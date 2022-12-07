@@ -13,6 +13,7 @@ public class GraphicSettings extends JFrame implements ActionListener {
     private JButton confirmButton;
 
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png");
+    GraphicInterface graphics;
 
     public GraphicSettings(){
         setContentPane(mainPanel);
@@ -28,8 +29,9 @@ public class GraphicSettings extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource().equals(goBack)){ // gör så att tillbaka knappen tar en tillbaka till start sida
+        if (e.getSource().equals(goBack)){
             Splashpage backToSplash = new Splashpage(); // öppnar splachpage
+            graphics.dispose();
             dispose();//stänger ner Settingsfönstret
         }
         if(e.getSource().equals(confirmButton)){

@@ -6,15 +6,16 @@ import org.junit.jupiter.api.Test;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
-
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 class SettingsTest {
+
 
     @RepeatedTest(5)
     void readConfigFilenameIsNull() {
@@ -38,12 +39,16 @@ class SettingsTest {
     void readConfigReturnsString() {
         TextSettings settings = new TextSettings();
         assertEquals("1", settings.ReadConfig("src/main/resources/Config", "speed1"));
+
+
     }
 
     @RepeatedTest(5)
     void readConfigFailsReturnString() {
         TextSettings settings = new TextSettings();
         assertNull(settings.ReadConfig("src/main/resources/Config", "speed25"));
+
+
     }
 
     @RepeatedTest(5)
@@ -68,6 +73,7 @@ class SettingsTest {
             settings.WriteConfig("src/main/resources/Config", "currentTextColor", null);
         });
     }
+
     @RepeatedTest(5)
     void writeConfigWritesString() {
         TextSettings settings = new TextSettings();
@@ -79,18 +85,18 @@ class SettingsTest {
             assertEquals("Black", settings.ReadConfig("src/main/resources/Config", "currentTextColor"));
         }
     }
-    @Test
-    void thisShouldChangeTheColorOfTextBasedWindow(){// testar så att metoden läser av ActionEvent och utför rätt kommando utifrån de
-        JButton pink = new JButton();
-        pink.setText("Pink");
-        var textWindow = new TextBasedWindow();
-        var subjectUnderTest = new TextSettings(textWindow,pink);
+
+
+    @RepeatedTest(5)
+    void thisShouldChangeTheColorOfTextBasedWindow() {
+        JButton button = new JButton("Pink");
+        TextBasedWindow textWindow = new TextBasedWindow();
+        var textSettings = new TextSettings(textWindow, button);
         ActionEvent mockEvent = mock(ActionEvent.class);
-        when(mockEvent.getSource()).thenReturn(pink);
-        subjectUnderTest.setColor(mockEvent);
-        assertEquals(Color.pink,textWindow.getPanel1().getBackground());
-        assertEquals(Color.pink,textWindow.getMainTextArea().getBackground());
+        when(mockEvent.getSource()).thenReturn(button);
+        textSettings.setColor(mockEvent);
+        assertEquals(Color.pink, textWindow.getPanel1().getBackground());
+        assertEquals(Color.pink, textWindow.getMainTextArea().getBackground());
+
     }
 }
-
-
