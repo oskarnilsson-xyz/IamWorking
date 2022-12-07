@@ -1,5 +1,4 @@
 package org.example;
-import javax.swing.*;
 
 public class Manager implements ConfigReadWrite { //Denna klassen ska agera dirigent och så mycket som vi mäktar med ska
                                                   //skapas och exekveras här.

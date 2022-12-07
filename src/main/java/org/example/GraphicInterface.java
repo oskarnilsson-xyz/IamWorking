@@ -2,8 +2,6 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class GraphicInterface extends JFrame {
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
@@ -19,11 +17,6 @@ public class GraphicInterface extends JFrame {
         setVisible(true);
         setIconImage(foxImage.getImage());
         Component doStuff;
-        SettingsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Manager.GraphicSettingsWindow();
-            }
-        });
+        SettingsButton.addActionListener(e -> Manager.GraphicSettingsWindow());
     }
 }
