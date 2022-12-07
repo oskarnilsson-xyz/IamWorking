@@ -11,7 +11,7 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
 
     private JButton cam1Button;
-    private JPanel survielWindowPanel;
+    private JPanel surveilWindowPanel;
     private JLabel cam1Feed;
     private JLabel cam1Head;
     private JButton cam2Button;
@@ -68,9 +68,9 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     //TODO: Gå igenom public, private osv.
     //TODO: Waterhole1 filen är felstavad, bråkade när jag försökte ändra den.
     public SurveilWindow() {
-        setContentPane(survielWindowPanel);
-        setIconImage(foxImage.getImage()); // lägger till icon till fönstret
-        setTitle("Surviel");
+        setContentPane(surveilWindowPanel);
+        setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
+        setTitle("Surveillance");
         setSize(1260, 800);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
