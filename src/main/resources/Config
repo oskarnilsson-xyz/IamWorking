@@ -2,8 +2,8 @@
 CamFeed1=Animal
 Camfeed2=Nation
 animalCam10=src/main/resources/cams/animalcams/waterhol1.gif
-animalCam11=src/main/resources/cams/animalcams/waterhole2.gif
 animalCam12=src/main/resources/cams/animalcams/wolfpath.gif
+animalCam11=src/main/resources/cams/animalcams/waterhole2.gif
 animalCam1=src/main/resources/cams/animalcams/arcticnest.gif
 animalCam2=src/main/resources/cams/animalcams/birdnest.gif
 animalCam3=src/main/resources/cams/animalcams/bush.gif
