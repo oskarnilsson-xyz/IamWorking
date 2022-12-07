@@ -1,8 +1,6 @@
 package org.example;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.event.*;
 
 
@@ -71,39 +69,25 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
         buttonTextColor4.addActionListener(this);
         buttonTextColor1.addActionListener(this);
 
-        fontsize.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                String value = Integer.toString(fontsize.getValue());
-                ConfigWrite(Main.configPath, "currentSpeed", value);
-                TBchanges.setFontSize(ConfigRead(Main.configPath, "currentFont"), fontsize.getValue());
+        fontsize.addChangeListener(e -> {
+            String value = Integer.toString(fontsize.getValue());
+            ConfigWrite(Main.configPath, "currentSpeed", value);
+            TBchanges.setFontSize(ConfigRead(Main.configPath, "currentFont"), fontsize.getValue());
 
-            }
         });
-        writingSpeed.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                String value = Integer.toString(writingSpeed.getValue());
-                ConfigWrite(Main.configPath, "currentSpeed", value);
-                //TBchanges.generationSpeed = writingSpeed.getValue();
-                TBchanges.generationSpeed = Integer.parseInt(ConfigRead(Main.configPath, "currentSpeed"));
-            }
+        writingSpeed.addChangeListener(e -> {
+            String value = Integer.toString(writingSpeed.getValue());
+            ConfigWrite(Main.configPath, "currentSpeed", value);
+            TBchanges.generationSpeed = Integer.parseInt(ConfigRead(Main.configPath, "currentSpeed"));
         });
-        FontBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                TBchanges.setFont((String) FontBox.getSelectedItem());
-                ConfigWrite(Main.configPath, "currentFont", (String) FontBox.getSelectedItem());
-            }
+        FontBox.addActionListener(e -> {
+            TBchanges.setFont((String) FontBox.getSelectedItem());
+            ConfigWrite(Main.configPath, "currentFont", (String) FontBox.getSelectedItem());
         });
-        fileSelect.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ConfigWrite(Main.configPath, "currentFileText", (String) fileSelect.getSelectedItem());
-                TBchanges.textToLoad = TBchanges.readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
-                //TBchanges.count = 0;
-                TBchanges.charactersWritten = 0;
-            }
+        fileSelect.addActionListener(e -> {
+            ConfigWrite(Main.configPath, "currentFileText", (String) fileSelect.getSelectedItem());
+            TBchanges.textToLoad = TBchanges.readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
+            TBchanges.charactersWritten = 0;
         });
     }
 

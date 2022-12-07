@@ -2,8 +2,6 @@ package org.example;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -47,11 +45,11 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     // Read text from file
     public static String readFileAsString(String fileName){
         try {
-            String data = "";
+            String data;
             data = new String(Files.readAllBytes(Paths.get(fileName)));
             return data;
         } catch (FileNotFoundException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -81,32 +79,21 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
 
         textToLoad = readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
 
-        goToSettingsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                 Manager.TextSettingsWindow(); // :)
-            }
+        goToSettingsButton.addActionListener(e -> {
+             Manager.TextSettingsWindow(); // :)
         });
-        uploadFileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) { // On button click, import a text file to generate text from
-                JFileChooser fileChooser = new JFileChooser();
-                FileNameExtensionFilter textFilter = new FileNameExtensionFilter("TEXT FILES", "txt", "text"); // Skapar ett filter som gör att vi bara kan läsa in textfiler
-                fileChooser.setFileFilter(textFilter); // Använd filtret på våran fileChooser
-                int uploadedFile = fileChooser.showOpenDialog(null); // Opens a window where the user can select a file
-                if (uploadedFile == JFileChooser.APPROVE_OPTION) { // If user selected a file
-                    File filePath = new File(fileChooser.getSelectedFile().getAbsolutePath());
-                    textToLoad = readFileAsString(String.valueOf(filePath)); // Select the new file as the textToLoad
-                }
+        uploadFileButton.addActionListener(e -> { // On button click, import a text file to generate text from
+            JFileChooser fileChooser = new JFileChooser();
+            FileNameExtensionFilter textFilter = new FileNameExtensionFilter("TEXT FILES", "txt", "text"); // Skapar ett filter som gör att vi bara kan läsa in textfiler
+            fileChooser.setFileFilter(textFilter); // Använd filtret på våran fileChooser
+            int uploadedFile = fileChooser.showOpenDialog(null); // Opens a window where the user can select a file
+            if (uploadedFile == JFileChooser.APPROVE_OPTION) { // If user selected a file
+                File filePath = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                textToLoad = readFileAsString(String.valueOf(filePath)); // Select the new file as the textToLoad
             }
         });
         // Todo - Decide whether to implement this or remove it entirely
-        enterTextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Should it be an option to just enter a copied text?");
-            }
-        });
+        enterTextButton.addActionListener(e -> System.out.println("Should it be an option to just enter a copied text?"));
 
         // KeyListener, to listen when we press keys on our keyboard
         mainTextArea.addKeyListener(new KeyAdapter() {
