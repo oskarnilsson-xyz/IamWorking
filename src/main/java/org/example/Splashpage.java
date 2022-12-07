@@ -15,7 +15,7 @@ public class Splashpage extends JFrame {
      //TODO lägg till bilder 
     //TODO: Gå igenom public, private osv.
     public Splashpage() {
-        setContentPane(splashPagePanel);
+        setContentPane(splashpagePanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
 
         setTitle("I am working");
