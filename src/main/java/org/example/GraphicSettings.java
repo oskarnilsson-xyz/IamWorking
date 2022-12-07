@@ -13,7 +13,6 @@ public class GraphicSettings extends JFrame implements ActionListener {
     private JButton confirmButton2;
     GraphicInterface graphics; //object av fönstret som inställningarna tillhör
 
-
     public GraphicSettings() {}
     public GraphicSettings(GraphicInterface graphics){
         this.graphics = graphics;

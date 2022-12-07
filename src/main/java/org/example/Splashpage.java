@@ -12,8 +12,12 @@ public class Splashpage extends JFrame {
     private JButton graphicInterfaceButton;
     private JButton survielInterfaceButton;
 
-    public Splashpage() { //TODO lägg till bilder
-        setContentPane(splashpagePanel);
+     //TODO lägg till bilder 
+    //TODO: Gå igenom public, private osv.
+    public Splashpage() {
+        setContentPane(splashPagePanel);
+        setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
+
         setTitle("I am working");
         setSize(720, 400);
         setResizable(false);
@@ -21,6 +25,7 @@ public class Splashpage extends JFrame {
         setVisible(true);
         setIconImage(foxImage.getImage());
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
 
         textInterfaceButton.addMouseListener(new MouseAdapter() {
             @Override

@@ -1,9 +1,10 @@
 package org.example;
-
 import javax.swing.*;
 
-public class Manager implements ConfigReadWrite {
-
+public class Manager implements ConfigReadWrite { //Denna klassen ska agera dirigent och så mycket som vi mäktar med ska
+                                                  //skapas och exekveras här.
+//TODO: Göra om manager constructorn så att vi förhoppningsvis kan sluta med static.
+    //TODO: Gå igenom public, private osv.
     public static TextBasedWindow textBasedWindow;
     public static GraphicInterface graphicInterfaceWindow;
     public static SurveilWindow survielWindow;
