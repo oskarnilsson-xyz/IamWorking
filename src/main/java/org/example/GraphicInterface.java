@@ -6,24 +6,45 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GraphicInterface extends JFrame {
-    ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
-    private JPanel mainPanel;
+    ImageIcon i = new ImageIcon("src/main/resources/img4.gif");
+    ImageIcon j = new ImageIcon("src/main/resources/dynamic.gif");
+    private JPanel panel1;
+    private JButton doStuffButton1;
+    private JLabel ilabel;
+    private JButton doStuffButton2;
+
+    ImageIcon foxImage = new ImageIcon("src/main/resources/e.png"); // lade till en icon till våra fönster
     private JButton SettingsButton;
     public GraphicInterface() {
-        setContentPane(mainPanel);
-        setSize(500, 550);
+        setContentPane(panel1);
+        setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
         setTitle("I am working");
+        setSize(500, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        setLocationRelativeTo(null);
         setVisible(true);
+        setLocationRelativeTo(null);
+        setResizable(false);
         setIconImage(foxImage.getImage());
         Component doStuff;
-        SettingsButton.addActionListener(new ActionListener() {
+        pack();
+        doStuffButton1.addActionListener(new ActionListener() {
+            /**
+             * @param e the event to be processed
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
-                Manager.GraphicSettingsWindow();
+                ilabel.setIcon(i);
             }
         });
+        doStuffButton2.addActionListener(new ActionListener() {
+            /**
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ilabel.setIcon(j);
+            }
+        });
+        SettingsButton.addActionListener(e -> Manager.GraphicSettingsWindow());
     }
 }
