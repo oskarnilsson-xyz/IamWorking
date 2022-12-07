@@ -135,7 +135,7 @@
             </constraints>
             <properties>
               <font name="Source Code Pro"/>
-              <text value="Back to  Splachpage"/>
+              <text value="Back to  Splashpage"/>
             </properties>
           </component>
           <component id="f4598" class="javax.swing.JLabel" binding="textSize">

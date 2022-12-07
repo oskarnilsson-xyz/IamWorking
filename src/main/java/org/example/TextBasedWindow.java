@@ -99,6 +99,7 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
                 }
             }
         });
+        // Todo - Decide whether to implement this or remove it entirely
         enterTextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
