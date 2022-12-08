@@ -9,14 +9,15 @@ import java.util.Objects;
 
 public class SurveilWindow extends JFrame implements ConfigReadWrite {
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
-
+    String[] animalCamArray = {"animalCam1", "animalCam2", "animalCam3", "animalCam4", "animalCam5", "animalCam6", "animalCam7", "animalCam8", "animalCam9", "animalCam10", "animalCam11", "animalCam12"};
+    String[] nationCamArray = {"nationCam1", "nationCam2", "nationCam3", "nationCam4", "nationCam5", "nationCam6", "nationCam7", "nationCam8", "nationCam9", "nationCam10", "nationCam11", "nationCam12"};
     private JButton cam1Button;
 
-    private JPanel surveilWindowPanel;
     public JPanel getSurveilWindowPanel() {
         return surveilWindowPanel;
-    }//gör en getter så jag kan se ifall de sker en förändring
+    }
 
+    private JPanel surveilWindowPanel;
     private JLabel cam1Feed;
     private JLabel cam1Head;
     private JButton cam2Button;
@@ -30,6 +31,7 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     private JButton cam11Button;
     private JButton cam10Button;
     private JButton cam9Button;
+    //------------panels-----------
     private JPanel cam1Panel;
     private JPanel cam6Panel;
     private JPanel cam2Panel;
@@ -42,6 +44,8 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     private JPanel cam4Panel;
     private JPanel cam8Panel;
     private JPanel cam12Panel;
+    JPanel[] camPanelArray = {cam1Panel, cam2Panel, cam3Panel, cam4Panel, cam5Panel, cam6Panel, cam7Panel, cam8Panel, cam9Panel, cam10Panel, cam11Panel, cam12Panel};
+    //------------Panels-----------
     private JLabel cam2Head;
     private JLabel cam3Head;
     private JLabel cam4Head;
@@ -53,6 +57,7 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     private JLabel cam10Head;
     private JLabel cam11Head;
     private JLabel cam12Head;
+    JLabel[] headArray = {cam1Head, cam2Head, cam3Head, cam4Head, cam5Head, cam6Head, cam7Head, cam8Head, cam9Head, cam10Head, cam11Head, cam12Head};
     private JLabel cam2Feed;
     private JLabel cam3Feed;
     private JLabel cam4Feed;
@@ -64,14 +69,11 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     private JLabel cam10Feed;
     private JLabel cam11Feed;
     private JLabel cam12Feed;
+    JLabel[] camFeedArray = {cam1Feed, cam2Feed, cam3Feed, cam4Feed, cam5Feed, cam6Feed, cam7Feed, cam8Feed, cam9Feed, cam10Feed, cam11Feed, cam12Feed};
     private JButton settingButton;
     private JLabel mainHead;
-    JLabel[] camFeedArray = {cam1Feed, cam2Feed, cam3Feed, cam4Feed, cam5Feed, cam6Feed, cam7Feed, cam8Feed, cam9Feed, cam10Feed, cam11Feed, cam12Feed};
-    JLabel[] headArray = {cam1Head, cam2Head, cam3Head, cam4Head, cam5Head, cam6Head, cam7Head, cam8Head, cam9Head, cam10Head, cam11Head, cam12Head};
-    String[] animalCamArray = {"animalCam1", "animalCam2", "animalCam3", "animalCam4", "animalCam5", "animalCam6", "animalCam7", "animalCam8", "animalCam9", "animalCam10", "animalCam11", "animalCam12"};
-    String[] nationCamArray = {"nationCam1", "nationCam2", "nationCam3", "nationCam4", "nationCam5", "nationCam6", "nationCam7", "nationCam8", "nationCam9", "nationCam10", "nationCam11", "nationCam12"};
+
     //TODO: Gå igenom public, private osv.
-    //TODO: Waterhole1 filen är felstavad, bråkade när jag försökte ändra den.
     public SurveilWindow() {
         setContentPane(surveilWindowPanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
@@ -83,12 +85,13 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
         setResizable(true);
         mainHead.setFont(new Font("Serif", Font.PLAIN, 18));
         SetHead();
+        SetSurveilWindowFromConfig();
         try {
             SetFeed();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//TODO stoppa in if satserna i en metod, för att reducera repetition av kod.
+//TODO stoppa in if satserna i en metod, för att reducera repetition av kod. Kan man göra det met ActionListeners?
         cam1Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam1"));
@@ -185,13 +188,7 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam12"));
             }
         });
-        //settingButton.addActionListener(e -> {Manager.SurveilSettingsWindow();});
-        settingButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Manager.SurveilSettingsWindow();//TODO fixa så settings fönster öppnas i surveilWindow
-            }
-        });
+        settingButton.addActionListener(e -> Manager.SurveilSettingsWindow());
     }
 
     //TODO Finns kanske ett bättre sätt?
@@ -222,5 +219,17 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
                 headArray[i].setText(ConfigReturnFileName(nationCamArray[i]));
             }
         }
+    }
+
+    public void SetSurveilWindowFromConfig() {
+        surveilWindowPanel.setBackground(ConfigColorFinder("currentBackgroundcolor"));
+        for (int i = 0; i < 12; i++) {
+            camPanelArray[i].setBackground(ConfigColorFinder("currentBackgroundcolor"));
+        }
+
+    }
+    public void SetSurvielWindowFocusColor(Integer panelNumber, Color color){
+        camPanelArray[panelNumber].setBackground(color); //Behöver ändras beroende på hur SurvielSettings görs.
+
     }
 }

@@ -1,4 +1,5 @@
 package org.example;
+
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
@@ -9,51 +10,30 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.*;
+import java.util.ArrayList;
 
-public class TextBasedWindow extends JFrame implements ConfigReadWrite{
+public class TextBasedWindow extends JFrame implements ConfigReadWrite {
 
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till vårt fönster
-    private JPanel panel1;
-    public void setBPanel1(Color color) {
-        panel1.setBackground(color);
-    }
+    String textToLoad;
+    // Text generation variables
+    char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
+    int generationSpeed = Integer.parseInt(ConfigRead(Main.configPath, "currentSpeed")); // Antalet tecken som ska generaras vid varje knapptryckning
+    int charactersWritten = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
+
     public JPanel getPanel1() {
         return panel1;
     }
-    private JTextArea mainTextArea;
-    public JTextArea getMainTextArea() {
+
+    public JTextArea getMainTextArea() {//detta är för testet thisShouldChangeTheColorOfTextBasedWindow()
         return mainTextArea;
     }
-    public void setFont(String f){
-        mainTextArea.setFont(new Font(f,Font.PLAIN,mainTextArea.getFont().getSize()));
-    }
-    public void setFontSize(String font, int size){
-        mainTextArea.setFont(new Font(font,Font.PLAIN, size));
-    }
-    public void setBTextArea(Color color){
-        mainTextArea.setBackground(color);
-    }public void setFTextArea(Color color){
-        mainTextArea.setForeground(color);
-    }
+
+    private JPanel panel1;
+    private JTextArea mainTextArea;
     private JButton goToSettingsButton;
     private JButton uploadFileButton;
 
-//TODO: Gå igenom public, private osv.
-//TODO: Klassen kommer behövas städas upp efter vi har fått in att allt uppdateras från config,
-
-    // Read text from file
-    public String readFileAsString(String fileName){
-        try {
-            String data;
-            data = new String(Files.readAllBytes(Paths.get(fileName)));
-            return data;
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     String textToLoad;
 
@@ -62,24 +42,20 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     int generationSpeed = Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed")); // Antalet tecken som ska generaras vid varje knapptryckning
     int charactersWritten = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
 
-
-    public TextBasedWindow() {     //TODO:TextBasedWindow fetch current settings from config on construction och gör det
-        setContentPane(panel1);    //TODO: och gör det i en separat metod så att vi kan kalla på den vid behov.
+    private JButton enterTextButton;
+    public TextBasedWindow() {
+        setContentPane(panel1);
         setTitle("Code typer");
         setSize(500, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         setLocationRelativeTo(null);
         setIconImage(foxImage.getImage());
+        SetTextWindowFromConfig();
 
-        mainTextArea.setBackground(ConfigColorFinder("currentBackgroundcolor"));// sätter färgen via Config filen
-        panel1.setBackground(ConfigColorFinder("currentBackgroundcolor"));
-        mainTextArea.setForeground(ConfigColorFinder("currentTextcolor"));
-
-        textToLoad = readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
 
         goToSettingsButton.addActionListener(e -> {
-             Manager.TextSettingsWindow(); // :)
+            Manager.TextSettingsWindow(); // :)
         });
         uploadFileButton.addActionListener(e -> { // On button click, import a text file to generate text from
             JFileChooser fileChooser = new JFileChooser();
@@ -104,12 +80,36 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
                 if (new String(keyInputs).indexOf(e.getKeyChar()) >= 0) {
                     System.out.println(e.getKeyChar());
                     charactersWritten += generationSpeed;
-                    if(charactersWritten >= textToLoad.length()) { // If the number of characters that should be written is greater than our total text length, restart from 0
+                    if (charactersWritten >= textToLoad.length()) { // If the number of characters that should be written is greater than our total text length, restart from 0
                         charactersWritten = 0;
                     }
                     mainTextArea.setText(textToLoad.substring(0, charactersWritten));
                 }
             }
         });
+    }
+
+    // Read text from file
+    public String readFileAsString(String fileName) {
+        try {
+            String data;
+            data = new String(Files.readAllBytes(Paths.get(fileName)));
+            return data;
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void SetTextWindowFromConfig() { //Uppdaterar alla inställningar från current i config
+        panel1.setBackground(ConfigColorFinder("currentBackgroundcolor"));
+        mainTextArea.setBackground(ConfigColorFinder("currentBackgroundcolor"));
+        mainTextArea.setForeground(ConfigColorFinder("currentTextColor"));
+        generationSpeed = Integer.parseInt(ConfigRead(Main.configPath, "currentSpeed"));
+        textToLoad = readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
+        mainTextArea.setFont(new Font(ConfigRead(Main.configPath, "currentFont"), Font.PLAIN, Integer.parseInt(ConfigRead(Main.configPath, "currentTextSize"))));
+
     }
 }
