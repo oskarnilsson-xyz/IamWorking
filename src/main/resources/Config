@@ -1,4 +1,4 @@
-#Wed Dec 07 14:00:23 CET 2022
+#Thu Dec 08 12:44:01 CET 2022
 hackerText=src/main/resources/files/hackerText
 fileGraphic3=fox23.txt
 fileGraphic2=fox22.txt
@@ -6,9 +6,9 @@ fileGraphic1=fox21.txt
 font2=Times New Roman
 font1=Arial
 font3=Source Code Pro
-currentFileText=essayText
+currentFileText=hackerText
 animalCam12=src/main/resources/cams/animalcams/wolfpath.gif
-currentTextSize=12
+currentTextSize=18
 animalCam11=src/main/resources/cams/animalcams/waterhole2.gif
 programmerText=src/main/resources/files/programmingText.txt
 animalCam10=src/main/resources/cams/animalcams/waterhole1.gif
@@ -21,7 +21,7 @@ nationCam6=src/main/resources/cams/nationcams/latvia.gif
 nationCam5=src/main/resources/cams/nationcams/italy.gif
 currentFont=Times New Roman
 nationCam4=src/main/resources/cams/nationcams/germany.gif
-currentSpeed=5
+currentSpeed=4
 currentCamFeed=Animal
 nationCam9=src/main/resources/cams/nationcams/norway.gif
 nationCam8=src/main/resources/cams/nationcams/netherlands.gif
