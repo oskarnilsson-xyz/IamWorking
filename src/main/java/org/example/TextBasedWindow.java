@@ -37,7 +37,6 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
     }
     private JButton goToSettingsButton;
     private JButton uploadFileButton;
-    private JButton enterTextButton;
 
 //TODO: Gå igenom public, private osv.
 //TODO: Klassen kommer behövas städas upp efter vi har fått in att allt uppdateras från config,
@@ -92,8 +91,6 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite{
                 textToLoad = readFileAsString(String.valueOf(filePath)); // Select the new file as the textToLoad
             }
         });
-        // Todo - Decide whether to implement this or remove it entirely
-        enterTextButton.addActionListener(e -> System.out.println("Should it be an option to just enter a copied text?"));
 
         // KeyListener, to listen when we press keys on our keyboard
         mainTextArea.addKeyListener(new KeyAdapter() {

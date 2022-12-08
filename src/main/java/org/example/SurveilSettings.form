@@ -14,7 +14,7 @@
         </constraints>
         <properties>
           <font name="Source Code Pro"/>
-          <text value="Back to  Splachpage"/>
+          <text value="Back to  Splashpage"/>
         </properties>
       </component>
       <component id="413cf" class="javax.swing.JButton" binding="confirmButton3">
