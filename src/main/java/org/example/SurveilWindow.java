@@ -12,6 +12,11 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     String[] animalCamArray = {"animalCam1", "animalCam2", "animalCam3", "animalCam4", "animalCam5", "animalCam6", "animalCam7", "animalCam8", "animalCam9", "animalCam10", "animalCam11", "animalCam12"};
     String[] nationCamArray = {"nationCam1", "nationCam2", "nationCam3", "nationCam4", "nationCam5", "nationCam6", "nationCam7", "nationCam8", "nationCam9", "nationCam10", "nationCam11", "nationCam12"};
     private JButton cam1Button;
+
+    public JPanel getSurveilWindowPanel() {
+        return surveilWindowPanel;
+    }
+
     private JPanel surveilWindowPanel;
     private JLabel cam1Feed;
     private JLabel cam1Head;
@@ -183,13 +188,7 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
                 new FocusWindow(ConfigRead(Main.configPath, "nationCam12"));
             }
         });
-        //settingButton.addActionListener(e -> {Manager.SurveilSettingsWindow();});
-        settingButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Manager.SurveilSettingsWindow();
-            }
-        });
+        settingButton.addActionListener(e -> Manager.SurveilSettingsWindow());
     }
 
     //TODO Finns kanske ett bättre sätt?
@@ -227,7 +226,6 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
         for (int i = 0; i < 12; i++) {
             camPanelArray[i].setBackground(ConfigColorFinder("currentBackgroundcolor"));
         }
-        SetSurvielWindowFocusColor(1,Color.GREEN); //Behöver ändras beroende på hur SurvielSettings görs.
 
     }
     public void SetSurvielWindowFocusColor(Integer panelNumber, Color color){
