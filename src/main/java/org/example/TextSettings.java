@@ -1,48 +1,64 @@
 package org.example;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.event.*;
 
 
 public class TextSettings extends JFrame implements ActionListener, ConfigReadWrite {
-    public JSlider writingSpeed;
+
     TextBasedWindow TBchanges;
     ImageIcon foxImage = new ImageIcon("src/main/resources/fox.png"); // lade till en icon till våra fönster
     private JPanel mainPanel;
-    private JPanel center;
-    private JPanel bottom;
     private JPanel topp;
+    private JPanel bottom;
+    private JPanel center;
+
+    private JLabel fileType;
+    private JLabel BKcolor;
+    private JLabel Tcolor;
+    private JLabel speed;
+    private JLabel textSize;
+
     private JButton goBack;
-    private JLabel label1;
     private JButton buttonBG1;
     private JButton buttonBG2;
     private JButton buttonBG3;
-    private JComboBox fileSelect;
     private JButton confirmButton;
+
     private JSlider fontsize;
-    private JLabel speed;
-    private JLabel textSize;
-    private JLabel BKcolor;
-    private JLabel Tcolor;
+    public JSlider writingSpeed;
+
     private JButton buttonTextColor1;
     private JButton buttonTextColor2;
     private JButton buttonTextColor3;
     private JButton buttonTextColor4;
-    private JLabel fileType;
     private JComboBox FontBox;
+    private JComboBox fileSelect;
 
-
-    public TextSettings(TextBasedWindow textBasedWindow) {// konstruktor
+    //TODO: Gå igenom public, private osv.
+    //TODO: Få bort "Set" metoderna från denna klass och låt fönsteret uppdateras med en metod som uppdateras mot config.
+    //TODO: Refactor Settings.form till TextSettings.form
+    public TextSettings(TextBasedWindow textBasedWindow, JButton button){//till testet
         TBchanges = textBasedWindow;
-        initializer();// method som innehåller saker vi vill ha till våra fönster
+        buttonBG1 = button;
+    }
+    public TextSettings(){
+    }
+    public TextSettings(TextBasedWindow textBasedWindow){// konstruktor
+        TBchanges = textBasedWindow;
+
+        setContentPane(mainPanel);
+        setIconImage(foxImage.getImage());
+        setTitle("Settings");
         setSize(400, 460); // specifikt för detta fönster
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         ConfigButton();// Detta ger oss möjligheten att ändra på knapparnas utseende och funktionalitet
         writingSpeed.setValue(Integer.parseInt(ConfigRead(Main.configPath, "currentSpeed"))); // gör så att sliders hänger med config-fil
         fontsize.setValue(Integer.parseInt(ConfigRead(Main.configPath, "currentTextSize")));
-
+       //------------------------Button Funktion-------------------------------
         goBack.addActionListener(this); //istället för detta går de att använda en lambda expprestion(e -> "de som ska göras")
         confirmButton.addActionListener(this);
         buttonBG1.addActionListener(this);
@@ -53,39 +69,26 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
         buttonTextColor4.addActionListener(this);
         buttonTextColor1.addActionListener(this);
 
-        fontsize.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
+        fontsize.addChangeListener(e -> {
                 String value = Integer.toString(fontsize.getValue());
                 ConfigWrite(Main.configPath, "currentSpeed", value);
                 TBchanges.setFontSize(ConfigRead(Main.configPath, "currentFont"), fontsize.getValue());
-
-            }
         });
-        writingSpeed.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                String value = Integer.toString(writingSpeed.getValue());
-                ConfigWrite(Main.configPath, "currentSpeed", value);
-                //TBchanges.generationSpeed = writingSpeed.getValue();
-                TBchanges.generationSpeed = Integer.parseInt(ConfigRead(Main.configPath, "currentSpeed"));
-                ;
-            }
+        writingSpeed.addChangeListener(e -> {
+            String value = Integer.toString(writingSpeed.getValue());
+            ConfigWrite(Main.configPath, "currentSpeed", value);
+            //TBchanges.generationSpeed = writingSpeed.getValue();
+            TBchanges.generationSpeed = Integer.parseInt(ConfigRead(Main.configPath, "currentSpeed"));
         });
-        FontBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                TBchanges.setFont((String) FontBox.getSelectedItem());
-                ConfigWrite(Main.configPath, "currentFont", (String) FontBox.getSelectedItem());
-            }
+        FontBox.addActionListener(e -> {
+            TBchanges.setFont((String) FontBox.getSelectedItem());
+            ConfigWrite(Main.configPath, "currentFont", (String) FontBox.getSelectedItem());
         });
-        fileSelect.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ConfigWrite(Main.configPath, "currentFileText", (String) fileSelect.getSelectedItem());
-                TBchanges.textToLoad = TBchanges.readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
-                TBchanges.count = 0;
-            }
+        fileSelect.addActionListener(e -> {
+            ConfigWrite(Main.configPath, "currentFileText", (String) fileSelect.getSelectedItem());
+            TBchanges.textToLoad = TBchanges.readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
+            //TBchanges.count = 0;
+            TBchanges.charactersWritten = 0;
         });
     }
 
@@ -115,21 +118,21 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
             setColor(e);
         }
     }
-
+    //------------------------Button Funktion-------------------------------
     public void setColor(ActionEvent colorSelect) {//  ändra bakgrundsfärg med knapptryck
 
         if (colorSelect.getSource().equals(buttonBG1)) {
-            TBchanges.setPanel1(ConfigColorFinder("backgroundcolor1"));//den går in i config för att läsa parametern
+            TBchanges.setBPanel1(ConfigColorFinder("backgroundcolor1"));//den går in i config för att läsa parametern
             TBchanges.setBTextArea(ConfigColorFinder("backgroundcolor1"));
             ConfigWrite(Main.configPath, "currentBackgroundcolor", ConfigRead(Main.configPath, "backgroundcolor1"));
         }
         if (colorSelect.getSource().equals(buttonBG2)) {
-            TBchanges.setPanel1(ConfigColorFinder("backgroundcolor2"));
+            TBchanges.setBPanel1(ConfigColorFinder("backgroundcolor2"));
             TBchanges.setBTextArea(ConfigColorFinder("backgroundcolor2"));
             ConfigWrite(Main.configPath, "currentBackgroundcolor", ConfigRead(Main.configPath, "backgroundcolor2"));
         }
         if (colorSelect.getSource().equals(buttonBG3)) {
-            TBchanges.setPanel1(ConfigColorFinder("backgroundcolor3"));
+            TBchanges.setBPanel1(ConfigColorFinder("backgroundcolor3"));
             TBchanges.setBTextArea(ConfigColorFinder("backgroundcolor3"));
             ConfigWrite(Main.configPath, "currentBackgroundcolor", ConfigRead(Main.configPath, "backgroundColor3"));
         }
@@ -152,15 +155,6 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
         }
     }
 
-    private void initializer() {// basic fakta för fönster
-        setContentPane(mainPanel);
-        setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
-        setTitle("I am working");
-        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-        setVisible(true);
-
-    }
-
     public String ReadConfig(String filename, String settingType) {
         //ReadConfig("src/main/resources/Config", "BackgroundcolorOptions")//struktur för att kalla informationen
         return ConfigRead(filename, settingType);
@@ -170,6 +164,8 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
         ConfigWrite(fileName, settingType, writeValue);
     }
 
+// denna method användes ej, men den är till för ifall knapparna ska ändra funktionalitet
+//TODO: Denna kan göras om till en for-loop som använder 2 st arrays, för att reducera återanvänd kod.
     void ConfigButton() {
 
         buttonBG1.setText(ConfigRead(Main.configPath, "backgroundcolor1")); //Ta knappens text från config filen

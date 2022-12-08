@@ -1,0 +1,324 @@
+
+8
+De Instagram-inlägg som analyserades var från influencers med livsstilsrelaterad hälsa som
+huvudfokus. Första inklusionskriteriet var att Instagramkontots biografi antingen innehöll
+beskrivningar med relaterade ord för att besvara syftet, som ”hälsa”, i sig själv eller i
+kombination med ”livsstil”. Dessa ord kunde stå med text men också finnas med i länkar på
+profilen och både engelska och svenska accepterades. För att avgränsa urvalet användes även
+följande inklusionskriterier: att influencern var svensk samt att minst tre bilder av de 12
+senaste bilderna passade in med kriterierna för de typ av inlägg som sedan analyserades.
+Kontot skulle ha minst 7 000 följare för att säkerställa att det hade en tillräckligt stor
+följarskara, men även för att få med så kallade mikro-influencers som har högre engagemang
+på sina konton. Konton som endast la ut recept exkluderades eftersom livsstilsrelaterad hälsa
+även innefattar träning och kropp. Konton med endast videor exkluderades också, då det inte
+fanns utrymme för att analysera dessa. Endast inläggen analyserades och kommentarer
+exkluderades, detta på grund av att syftet var att undersöka framställningen av
+livsstilsrelaterad hälsa utifrån hur influencers presenterar detta.
+Inläggen som valdes ut för analys innehöll antingen någon form av
+• träning, träningskläder eller gym i bild
+• kropp i centrum av bilden eller avklädd/delvis avklädd
+• kost i bild, men inte endast recept som tillhörande text
+Valda konton
+I tabell 1 presenteras de valda Instagramkontona med användarnamn, antal följare och den
+biografi de själv skrivit för att visa hur de presenterar sig själva. Emojis inte inkluderade.
+Tabell 1. Beskrivning av Instagramkonton
+Namn Antal
+följare
+Beskrivning av konto
+@lesscarbs 62,8K Fanny Lindkvist – Mat & hälsa
+Författare
+Hälsoinspiratör #hållbarhet
+Ohämmad idéspruta
+Författare x 2
+Lyfter astungt på @gattitraning
+Lesscarbs.se 900+ recept och tips
+Linktr.ee/lesscarbs
+@wellness_thessan 10K TRÄNING HÄLSA VÄLMÅENDE
+Gävle, 43
+9
+Träningsglad
+Utmattningssyndrom
+Psykisk ohälsa
+@matte_armyfitness
+@gaamnutrition GAAMTESSAN
+@icaniwill FITNESSTHESSAN15
+Click.adrecord.com/?c
+@wellnesswicky 18K Hälsa & Livsstil Inspiratör WW
+Webbplats om hälsa och välbefinnande
+Inspiration till hälsosam livsstil
+Tips & recept på hälsosam mat, godsaker, träning
+Viktnedgång 38,2kg
+info@wellnesswicky.se
+#wellnesswicky
+Wellnesswicky.se/
+@elsahassler 10,5K ELSA HASSLER Health Wealth
+Medical Student
+Diploma of Sports
+Barry’s trainer
+Gothenburg, Swe
+Bit.ly/3spgcMZ
+@linnstrand 84,7K Linn Strand FITNESS HEALTH
+Tränare
+PT & Nutritionist, PT-Online Coach
+@officialbetterbodies
+@rapunzelofsweden
+@nocco @barebells @lifesum
+Linn@linnstrand.com
+www.linnstrand.com
+@idas_fitness 12K Fitness, health, bodybuildning
+Swe, 20/y, heavy hipthrusts & lots of food
+Personal development
+@gaamnutrition @proteinbolaget
+@jennysfreed 56,8K SELFLOVE HEALTH GRLPWR
+Offentlig person
+JENNY SVEDBERG FREÉD
+Tyngdlyftare/coach, föreläsare, inspiratör & vann
+kampen mot psykisk ohälsa
+Team @nocco @tyngre
+Clic.to/Nyakolivetjenny
+@lthylifestyle 12K Olivia. Dietiststudent
+Lagom nyttigt! Evidensbaserat utan förbud, hets eller
+rädsla. Det är hälsa på riktigt!
+10
+Blå länk = alla mina recept
+Lthy19.wixsite.com/minsida/blog
+@vickanswellnes 13,2K Vickan Bra mat, bra träning
+Hälsa/skönhet
+Samarbetspartners
+ICIW: VickansWell15 – 15% på allt
+Tillskottsbolaget: Vickans20 – 20% på Solid
+Nutrition
+Wolt: VickansWellness – 50kr rabatt
+Lifesum.com/redeem/Vickanswellness30
+@madeleine_rydbeck 29,5K Träningstips PT online
+Webbplats om hälsa och välbefinnande
+Bygger starka kvinnor inifrån och ut!
+PT, kostrådgivare, mammamage cert.
+Hållbar hälsa utan dieter och förbud
+(PT Online-Webkurser
+Livsnjutare
+www.lifeatcore.com
+Svenljunga
+@beatircekruses 12,9K Beatrice Kruse Hälsocoach
+Entreprenör
+#goodvibes och enkel hälsa
+Online Hälsocoach
+PT
+@fastsverige
+Hemsida+kontakt
+www.beatricekruse.com
+Datainsamlingsmetod
+Metoden för datainsamling var dokumentinsamling, där riktlinjerna för hur mycket material
+som skulle samlas in utgick från Danielsson (2012), kortare texter bör motsvara cirka 200
+sidor. Denna analys innefattade även bilder vilket omförhandlade storleken för insamlingen
+till cirka 100 inlägg, eller till resultatet uppnått redundancy vilket innebär att ny information
+inte längre erhålls med nytt material (Patton, 2002). Detta uppnåddes vid 84 inlägg. Insamling
+gjordes via instagram.com, och varje valt inlägg skärmdumpades för vidare analys.
+Tillvägagångssätt
+Sökningar på konton på Instagram genomfördes med sökorden ”hälsa”, ”livsstil”, ”health”
+och ”lifestyle”, eftersom svenska influncers kan skriva på både engelska och svenska. Detta
+gjordes vid två tillfällen för att undersöka om sökningarna gav olika resultat vilket det gjorde.
+11
+De kontona som överensstämde med inklusionskriterier beskrivna ovan skärmdumpades och
+granskades ytterligare för att säkerställa att de motsvarade inklusionskriterierna eller
+omfattades av exklusionskriterierna. 20 konton motsvarade kriterierna och av dessa valdes
+därefter 11 konton ut efter den ovan beskrivna urvalsmetoden. Av de senaste 20 bilderna hos
+respektive influencer som motsvarade kriterierna (Pilgrim & Bohnet-Joschko, 2019) valdes de
+mest innehållstäta inläggen ut för analys, enligt intensity sampling (Patton, 2002). Dessa hade
+lagts ut mellan 2019-10-06 till och med 2021-03-11.
+Forskningsetiska överväganden
+Enligt Vetenskapsrådet (2017) bör samtycke inhämtas om forskning kan skada deltagarna
+psykiskt eller fysiskt eller om den innefattar känsliga personuppgifter. Denna undersökning
+avsåg inte att behandla Instagram-profilers person utan undersökningen behandlade endast
+inlägg som var öppna för offentligheten: alla instagramkonton som undersöktes var ”öppna”,
+det vill säga att de går att hitta utan att aktivt be om att få tillgång till dessa, vilket innebär att
+allt material som samlats in redan fanns tillgängligt och utlagt offentligt av personerna bakom
+inläggen. Samtycke hämtades således inte och personerna bakom inläggen visste inte att deras
+inlägg granskades men det var att undersöka hur hälsa representeras i offentligheten som var
+av intresse för arbetet, inte personerna i sig.
+Bearbetning och analys
+Vid bearbetning och analys av materialet användes multiodalanalys. Närmandet av språket
+och visuella val ses genom denna analysform som val av olika alternativ som speglar sin
+kontext. Analysen är därmed förflyttad från grammatiken och koncentreras på att se diskursen
+som olika verktyg för att bära sociala värden (Ledin & Machin, 2020; Björkvall, 2019). För
+att utföra multiodalanalys av skrift och bild används begreppen ideationell, interpersonell och
+textuell metafunktion. Dessa är olika betydelser som text och bild kan uttrycka och beskrivs
+mer utförligt under Analysverktyg. Genom en multiodalanalys närmas även delar av helheten
+på ett relativt ofixerat sätt, till skillnad från andra läror om semiotik. Exempelvis kan inte
+enligt endast färgen röd tolkas för sig själv (som exempelvis tecken på fara) utan måste ses i
+sin kontext vilket kan ge den en annan mening (Ledin & Machin, 2020). Tillexempel så
+tolkades inte alla bilder tagna från ett perspektiv ovanifrån som ett maktutförande utan i sin
+kontext kunde det tolkas som en vinkel som fick med vad utsändaren ville visa upp och hur.
+Såväl text som visuella element ses därför i förhållande till varandra (Ledin & Machin, 2020).
+Dessa delar kan ses som semiotisk resurser med betydelsepotentialer, vilka inte heller kan
+12
+inneha vilken innebörd som helst eftersom de verkar inom vissa kulturella och sociala
+sammanhang (Björkvall, 2019).
+Socialsemiotik och det teoretiska ramverket
+Multimodalanalys bygger på socialsemiotik, en teori som ser kommunikation som val mellan
+tillgängliga alternativ. Dessa olika alternativ har som ovan beskrivits, betydelsepotentialer.
+Exempelvis beskrivs människor och ting aldrig neutralt utan kontexten spelar roll för hur
+utsändaren väljer att framställa något. Genom valen av alternativ i hur något beskrivs kan
+värden som speglar kontexten urskiljas (Ledin & Machin, 2020). Vidare exemplifierar Ledin
+och Machin (2020) detta genom modalitet, säkerheten i uttalanden (som beskrivs närmare
+nedan): dessa kan innehålla flera alternativ, som ”jag måste göra” kontra ”jag kommer göra”.
+Dessa två alternativ har olika betydelsepotential i den benämningen att det senare alternativet
+inte innehåller samma nivå av åtagande. Betydelsepotentialen i en semiotisk resurs är viktig i
+socialsemiotik, eftersom den inte är helt fixerad utan skapas och kan omskapas (Kress, 2009).
+Det teoretiska ramverket användes med deduktiv ansats, det vill säga att teorierna användes
+som det perspektiv vilken analysen utgick från (Henricson, 2012). Detta gjordes för att belysa
+hur budskapen formades enligt element av utförande och vad som beskrivs som
+livsstilsrelaterad hälsa i diskurs. Socialsemiotiken användes för att belysa betydelsepotentialer
+i sin kontext, vilket den gemensamt med performativitet ser som ofixerad: den skapas i
+kontexten och förhåller sig till normer, liksom att det även ses som en användning av resurser
+som på olika sätt skapar och kan utövas för att uppnå makteffekter (Kress, 2009; Bell, 2007).
+Performativitet belyste det som subjektets positionering gentemot normativa diskurser
+(Nordgren, 2008) och vidmakthållande och befästande av normer ses genom upprepning
+(Bell, 2007). Element av utförande fångade hur budskapet framfördes och bidrog med fler
+begrepp för att förklara hur budskapet kan tolkas för typ av önskad effekt (Finnegan Jr &
+Viswanath, 2008).
+Analysverktyg
+Element av utförande - inramning, exemplifiering, narrativ och sensationssökande, beskrivna
+i teoriavsnittet om hur budskap framförs i texter, användes först. Detta för att se hur
+budskapen formulerades (Finnegan Jr & Viswanath, 2008). Därmed undersöktes hur
+budskapet ramades in, det vill säga i vilken utsträckning positiva eller negativa ord användes
+om det användes något exempel för att påvisa hur liknande situationer ska bemötas. Vidare
+13
+undersöktes om utsändaren skapade ett narrativ, som kan utläsas som ett agerande av förebild
+eller om det fanns det element av sensationssökande i budskapen som dramatiserade och
+förstärkte budskapet.
+Interpersonella metafunktioner - För att analysera bildernas interpersonella metafunktioner
+undersökes positioneringar gentemot mottagaren genom perspektiven i vilken personer på
+bilden avbildats (Björkvall, 2019). Frontal avbildning kommunicerar med mottagaren. Om
+personerna däremot inte porträtteras med blicken mot kameran positioneras betraktaren som
+observatör. Avbildning i profil ger ett mer distanserat förhållande gentemot betraktaren men
+detta beror dock framförallt på den övriga kontexten, vilket gör det mer till en flytande skala.
+Avbildningar där det finns ett ovanifrån- eller underifrånperspektiv förmedlar ofta någon sorts
+maktposition. Distanser kan användas för att simulera sociala relationer, närbilder förknippas
+ofta med intimitet. Adressering förekommer även i kombination med texten. Genom
+erbjudanden och krav utlästes den interpersonella metafunktionen i text: ställs en fråga till
+mottagaren krävs dennes respons, medan uppmaningar förväntas följas av ett åtagande.
+Påståenden kräver däremot inte aktivitet, utan detta kan accepteras som sanning eller inte.
+Erbjudanden förväntas ofta få en accepterande respons (Björkvall, 2019; Ledin & Machin,
+2020).
+Ideationella metafunktioner – behandlade representation av olika mänskliga erfarenheter av
+världen. Detta kan enligt Björkvall (2019) vara en beskrivning av någon eller något. För att
+beskriva hur livsstilsrelaterad hälsa representerades undersöktes meningen i objekten på
+bilder, hur människorna på bilden var representerade och vilken typ av bakgrund som använts
+och vad den signalerade. Denotation var det första steget – här sågs bilden genom ett
+dokumenterande syfte. Däremot är framställningen aldrig helt neutral då det finns val kring
+vad som dokumenteras (Ledin & Machin, 2020). Därefter användes konnotation för att
+analysera vilka värden och idéer som bilden kan bära. Objekt i bilden kunde bära på olika
+associationer och som exempel så kunde objekt i bilden ”bytas ut” mot något annat för att
+konkretisera vad som bar mening och vad som skulle förändras med meningen genom
+förändringen av något av det visuella (Ledin & Machin, 2020). Värden och ideologiska
+effekter sågs också genom uttryck kopplade till sociala- och kulturella symboler och koder.
+Exempel på detta kunde vara hårstilar och kläder (Ledin & Machin, 2020). Individualisering
+och kollektivisering kan i text analyseras genom användandet av pronomen (Björkvall, 2019).
+Exempelvis hur människor beskrivs som individer eller grupper genom jag, du, vi och ni.
+14
+Händelser i bild utlästes genom olika processer, exempelvis om det genom materiella
+processer på en bild går att utläsa att något specifikt görs på bilden. Exempelvis kan hantlar i
+handen på en person i bild indikera att personen tränar på bilden. Ansiktsuttrycken i bilderna
+gav en uppfattning om vilka känslor som förmedlas, så kallade emotionella processer (Ledin
+& Machin, 2020). Språkliga processtyper utlästes genom om eller hur vem, vad eller
+någonting hade en deltagarroll som kan knytas till processer och dessa har, gör och är
+(Björkvall, 2019). Exempel från Björkvall (2019) är ”Fryser du?”, vilket är en mental process
+där du knyts samman med verbet fryser genom upplevelse.
+Textuell metafunktion – Här undersöktes helheten, det vill säga hur kompositionen har
+använts för att ge ett motiverat helhetsuttryck som skapar mening till mottagaren (Björkvall,
+2019). Exempelvis är det enlig västerländsk tradition vanligt att läsa från vänster till höger,
+vilket kan ge den kompositionen på ”före” och ”efter” bilder på bantning förståelsen i vilken
+ordning dessa förekommer. Kontraster mellan bild och text kan förekomma, eller så bekräftar
+de varandra (Björkvall, 2019). Detta var av extra intresse för den sista frågeställningen, då
+kontrasterad bild och text kan skapa kontrasterande budskap, eller rent av motsäga något av
+varandra.
+Modalitet - som lingvistiskt begrepp handlar om hur och med vilken säkerhet uttalanden görs,
+vilken typ och vilken nivå av sanning som uttalas (Björkvall, 2019). Exempelvis kan
+användning av ”möjligen” i en mening avslöja med vilken säkerhet ett uttalande görs. Det kan
+också användas i förhållande till andra, eftersom det inte handlar om den objektiva sanningen
+utan kan ses som interpersonell kommunikation i den benämningen att den kan fungera som
+ett sammanförande mellan vissa och distansering från andra. Exempelvis, ”vissa verkar tro
+men vi vet” (Ledin & Machin, 2020). Modaliteten i texten analyserades utefter dessa kriterier.
+Vid analys av modalitet i bild handlar det snarare om vilken verklighet som avbildats och vad
+som är utelämnat, markerat eller suddigt. Det är inte heller här den objektiva sanningen som
+avgör hur hög modaliteten är, utan hur den är representerad. Exempelvis kan något ha hög
+naturlig modalitet, det vill säga att vi ser det som hur vi skulle tänkt oss att det sett ut om vi
+sett det på plats. Med hjälp av hur färger, ljus och skuggning använts gjordes djupare tolkning
+av detta. Analysen av modaliteten utgick därmed från hur ljus istället för mörker använts och
+15
+vilken skala av färger som använts för att förmedla vad, samt vad som är markerat respektive
+utsuddat (Ledin & Machin, 2020).
+Utförande av analys
+Bearbetning och analys av det insamlade materialet följde ovan beskrivna begrepp i följande
+steg (Björkvall, 2019): först listades de viktigaste elementen i varje inlägg för sig och därefter
+styrde syfte och frågeställningarna den vidare analysen. Utformande av budskapet
+analyserades enligt element av utförande. Därefter analyserades interpersonella betydelser,
+hur personer i bild- och texthandling relaterade till varandra samt hur de relaterade till
+mottagaren genom distanser och vinklar. I nästa steg analyserades representationen av världen
+i form av analys av visuella element, exempelvis hur representerades eller porträtteras vissa
+egenskaper. Därefter analyserades hela kompositionen mellan elementen. Modalitet
+analyserades genom vilken verklighet elementen kan kopplas till och pålitligheten i de olika
+elementen, tillexempel hjälpverb i text och upplösningar och markeringar i bild (Ledin &
+Machin, 2020; Björkvall, 2019).
+Därefter undersöktes huruvida upprepningar förekom eller om diskursen omförhandlades,
+både i enskilda inlägg men också i hela materialet under genomläsning för att skapa initiala
+koder. Struktureringen av den samlade analysen utgick från fonetisk iterativ metod. Initial
+kodning gjordes under första analyssteget, first-cycle coding, därefter strukturerades och
+parades de första koderna ihop och dessa analyserades för att skapa nya koder och kategorier
+väsentliga utifrån frågeställningen, så kallad second-cycle coding. Kategorier formulerades
+utefter vad som var beskärningspunkten hos de tillhörande koderna (Tracy, 2018).
+
+RESULTAT
+Resultat av analysen presenteras genom fyra kategorier med tillhörande koder i tabell 2.
+Tabell 2. Kategorier
+Kategori Goda effekter “Strong is the new skinny”
+Självpresenterande Mottagare
+Koder Psykiskt mående
+Livskvalité
+Ideal
+Formens värde
+Bärare
+Experter
+Jämförelse
+Din attityd styr
+Ansvar
+
+16
+Goda effekter
+Att beskriva kost och träning med vilka effekter de hade framkom återkommande i
+beskrivningen av dessa. Positiva inramningar (Finnegan Jr & Viswanath, 2008) gjordes på
+träningens och matens effekt på livet i stort.
+Psykiskt mående
+Många influencers lyfte träningens effekt på måendet som en viktig anledning till att träna.
+Exempelvis lyfts endorfinkicken som en drivkraft i inlägget från @elsahassler, 26/11 2020: Figur 1.
+
+I figur 1 adresserar Elsa mottagaren med blicken i kameran och kräver således dennes
+uppmärksamhet enligt interpersonella metafunktioner (Björkvall, 2019; Ledin & Machin,
+2020). Ideationella metafunktioner ses genom träningskläderna och den rödaktiga tonen på
+huden, dessa tolkas som betydelsepotential av träning och fysisk aktivitet, eftersom träning
+orsakar värmepåslag i kroppen och träningskläder bärs vid träning. Bildens modalitet är ljus i
+tonerna, vilket inger känsla av positivitet (Ledin & Machin, 2020) och i texten betonar Elsa
+att endorfiner är en av många anledningar att träna. Det går att tolka som att det finns fler
+anledningar till att träna, men i detta inlägg fokuserar Elsa på endorfinerna. Dess effekt
+utläses genom leendet, det intima avståndet i bilden som bjuder in mottagaren till en
+emotionell process att dela glädje med Elsa (Björkvall, 2019). Även genom hashtags som
+17
+#endorphinhigh –hög på endorfiner, beskriver effekten för mottagaren. Hashtag #hälsa
+kommunicerar att den endorfinkick som träning ger är hälsa, samt att den är för dig själv
+genom hashtagen #workoutforyourself – träna för dig själv. Hela inlägget känns positivt i den
+textuella metafunktionen.
+Det fanns fler versioner av hur träning fått influencerna att må bra och detta bar ett stort värde
+för att fortsätta, särskilt vid psykisk ohälsa - @wellness_thessan lyfte hur endorfiner hjälpte
+henne med en pågående depression och att träningen därav hade betydelse för att inte må
+sämre. Både @beatricekruses och @vickanswellness tar upp tidigare ätstörningar, både nära
+och längre ifrån nutiden – med efter-bilder på tränande kroppar på gym som uppvisas som
+bevis på friskhet, vilket kopplar träningen som faktor för friskhet i motsatsförhållande till
+psykisk ohälsa. Att fokusera på hälsa istället för utseende och kroppskontroll är bättre för
+motivationen (Greenleaf & Rodriguez, 2021), vilket ger ett positivt omförhandlande av vad
+som kan motivera till att träna.
+Livskvalité
+Flera influencers beskrev hur vissa livsmedel kunde bidra till livskvalité och därför vara en
+del av en hälsosam livsstil och att de inte skulle ha effekter som dålig hälsa eller ett förlorande
+av formen i det stora hela. Detta blir tydligt i ett inlägg från @lthylivsstil, 3/3 2021:
+Figur 2.
