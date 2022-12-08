@@ -1,7 +1,6 @@
 package org.example;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,6 +11,21 @@ public class SurveilSettings extends JFrame implements ActionListener {
     private JButton goBack3;
     private JButton chooseColorButton;
     private JPanel mainPanel;
+    private JCheckBox c5;
+    private JCheckBox c9;
+    private JCheckBox c1;
+    private JCheckBox c12;
+    private JCheckBox c8;
+    private JCheckBox c4;
+    private JCheckBox c11;
+    private JCheckBox c7;
+    private JCheckBox c3;
+    private JCheckBox c10;
+    private JCheckBox c6;
+    private JCheckBox c2;
+    private JButton nationsButton;
+    private JButton animalsButton;
+    private JLabel whatToWatch;
     SurveilWindow surveilensWindow;
 
     public SurveilSettings(SurveilWindow surveilWindow){

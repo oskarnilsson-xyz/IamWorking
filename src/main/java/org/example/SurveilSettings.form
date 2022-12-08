@@ -1,31 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.example.SurveilSettings">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="4" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="5" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="20" left="20" bottom="20" right="20"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="618" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
       <component id="d0f42" class="javax.swing.JButton" binding="goBack3">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Source Code Pro"/>
-          <text value="Back to  Splachpage"/>
+          <text value="Back to  Splashpage"/>
         </properties>
       </component>
       <component id="413cf" class="javax.swing.JButton" binding="confirmButton3">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Confirm "/>
         </properties>
       </component>
-      <grid id="f13f6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="f13f6" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="e9ed3" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Source Code Pro" size="14" style="1"/>
+              <text value="Background color"/>
+            </properties>
+          </component>
+          <component id="30317" class="javax.swing.JButton" binding="animalsButton" default-binding="true">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Animals"/>
+            </properties>
+          </component>
+          <component id="84348" class="javax.swing.JButton" binding="nationsButton" default-binding="true">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Nations"/>
+            </properties>
+          </component>
+          <component id="9c1b1" class="javax.swing.JButton" binding="chooseColorButton" default-binding="true">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-4487108"/>
+              <foreground color="-15395563"/>
+              <text value="Choose Color"/>
+            </properties>
+          </component>
+          <component id="5756f" class="javax.swing.JLabel" binding="whatToWatch">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Source Code Pro" size="14" style="1"/>
+              <text value="Select what to watch"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="2c589" layout-manager="GridLayoutManager" row-count="4" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -33,42 +87,115 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="9c1b1" class="javax.swing.JButton" binding="chooseColorButton" default-binding="true">
+          <component id="db665" class="javax.swing.JCheckBox" binding="c5">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-1510405"/>
-              <foreground color="-15395563"/>
-              <text value="Choose Color"/>
+              <text value="camFeed5"/>
+            </properties>
+          </component>
+          <component id="29cc4" class="javax.swing.JCheckBox" binding="c9">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="camFeed9"/>
+            </properties>
+          </component>
+          <component id="945fe" class="javax.swing.JCheckBox" binding="c1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="camFeed1"/>
+            </properties>
+          </component>
+          <component id="3ad9d" class="javax.swing.JCheckBox" binding="c4">
+            <constraints>
+              <grid row="0" column="7" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="camFeed4"/>
+            </properties>
+          </component>
+          <component id="68163" class="javax.swing.JCheckBox" binding="c12">
+            <constraints>
+              <grid row="2" column="7" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="camFeed12"/>
+            </properties>
+          </component>
+          <component id="24c7d" class="javax.swing.JCheckBox" binding="c8">
+            <constraints>
+              <grid row="1" column="7" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="camFeed8"/>
+            </properties>
+          </component>
+          <component id="b8bcb" class="javax.swing.JCheckBox" binding="c11">
+            <constraints>
+              <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="camFeed11"/>
+            </properties>
+          </component>
+          <component id="7d0a5" class="javax.swing.JCheckBox" binding="c7">
+            <constraints>
+              <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="camFeed7"/>
+            </properties>
+          </component>
+          <component id="e3fbe" class="javax.swing.JCheckBox" binding="c3">
+            <constraints>
+              <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="camFeed3"/>
+            </properties>
+          </component>
+          <component id="77c01" class="javax.swing.JCheckBox" binding="c10">
+            <constraints>
+              <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="camFeed10"/>
+            </properties>
+          </component>
+          <component id="d0f0b" class="javax.swing.JCheckBox" binding="c6">
+            <constraints>
+              <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="camFeed6"/>
+            </properties>
+          </component>
+          <component id="e65ec" class="javax.swing.JCheckBox" binding="c2">
+            <constraints>
+              <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="camFeed2"/>
             </properties>
           </component>
         </children>
       </grid>
-      <grid id="2c589" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <component id="ad710" class="javax.swing.JLabel">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <component id="e9ed3" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <font name="Source Code Pro" size="14" style="1"/>
-              <text value="Background color"/>
-            </properties>
-          </component>
-          <vspacer id="4a72f">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-            </constraints>
-          </vspacer>
-        </children>
-      </grid>
+        <properties>
+          <background color="-4487108"/>
+          <font name="Source Code Pro" size="12" style="1"/>
+          <foreground color="-4487108"/>
+          <text value="Select area to change color "/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
