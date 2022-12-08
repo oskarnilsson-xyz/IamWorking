@@ -34,14 +34,6 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite {
     private JButton goToSettingsButton;
     private JButton uploadFileButton;
 
-
-    String textToLoad;
-
-    // Text generation variables
-    char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
-    int generationSpeed = Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed")); // Antalet tecken som ska generaras vid varje knapptryckning
-    int charactersWritten = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
-
     private JButton enterTextButton;
     public TextBasedWindow() {
         setContentPane(panel1);
