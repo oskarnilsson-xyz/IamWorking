@@ -13,7 +13,7 @@ public class SurveilSettings extends JFrame implements ActionListener {
     private JButton chooseColorButton;
     private JPanel mainPanel;
     SurveilWindow surveilensWindow;
-
+// CamFeed-tema, Bakgrundsfärg, Focusfärg
     public SurveilSettings(SurveilWindow surveilWindow){
         setContentPane(mainPanel);
         setTitle("Settings");

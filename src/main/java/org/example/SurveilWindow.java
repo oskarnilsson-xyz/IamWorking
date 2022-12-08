@@ -13,10 +13,6 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     private JButton cam1Button;
 
     private JPanel surveilWindowPanel;
-    public JPanel getSurveilWindowPanel() {
-        return surveilWindowPanel;
-    }//gör en getter så jag kan se ifall de sker en förändring
-
     private JLabel cam1Feed;
     private JLabel cam1Head;
     private JButton cam2Button;
@@ -30,6 +26,7 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     private JButton cam11Button;
     private JButton cam10Button;
     private JButton cam9Button;
+    //------------panels-----------
     private JPanel cam1Panel;
     private JPanel cam6Panel;
     private JPanel cam2Panel;
@@ -42,6 +39,7 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     private JPanel cam4Panel;
     private JPanel cam8Panel;
     private JPanel cam12Panel;
+    //------------Panels-----------
     private JLabel cam2Head;
     private JLabel cam3Head;
     private JLabel cam4Head;
@@ -71,7 +69,6 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     String[] animalCamArray = {"animalCam1", "animalCam2", "animalCam3", "animalCam4", "animalCam5", "animalCam6", "animalCam7", "animalCam8", "animalCam9", "animalCam10", "animalCam11", "animalCam12"};
     String[] nationCamArray = {"nationCam1", "nationCam2", "nationCam3", "nationCam4", "nationCam5", "nationCam6", "nationCam7", "nationCam8", "nationCam9", "nationCam10", "nationCam11", "nationCam12"};
     //TODO: Gå igenom public, private osv.
-    //TODO: Waterhole1 filen är felstavad, bråkade när jag försökte ändra den.
     public SurveilWindow() {
         setContentPane(surveilWindowPanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
@@ -88,7 +85,7 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//TODO stoppa in if satserna i en metod, för att reducera repetition av kod.
+//TODO stoppa in if satserna i en metod, för att reducera repetition av kod. Kan man göra det met ActionListeners?
         cam1Button.addActionListener(e -> {
             if (ConfigRead(Main.configPath, "currentCamFeed").equals("Animal")) {
                 new FocusWindow(ConfigRead(Main.configPath, "animalCam1"));
@@ -189,7 +186,7 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
         settingButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Manager.SurveilSettingsWindow();//TODO fixa så settings fönster öppnas i surveilWindow
+                Manager.SurveilSettingsWindow();
             }
         });
     }
@@ -222,5 +219,8 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
                 headArray[i].setText(ConfigReturnFileName(nationCamArray[i]));
             }
         }
+    }
+    public void SetSurveilWindowFromConfig(){
+
     }
 }

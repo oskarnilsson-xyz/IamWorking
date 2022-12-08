@@ -8,6 +8,8 @@ import java.lang.reflect.Field;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
+// Vi förstår att detta inte är en korrekt implementation av interface och att detta egentligen borde ligga i en klass
+// En interface ser ut så här: public String ConfigRead(String fileName, String settingType) // och sedan hade varje class gjort en egen implementation.
 
 public interface ConfigReadWrite { //Returnerar en string baserat på en given nyckel(allt till och med = är nyckel.
     default String ConfigRead(String fileName, String settingType){ //Retunerar inställningsvärde från config filen
