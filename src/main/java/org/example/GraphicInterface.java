@@ -29,7 +29,7 @@ public class GraphicInterface extends JFrame {
         setContentPane(panel1);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
         setTitle("I am working");
-        setSize(500, 600);
+        setSize(400, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         setLocationRelativeTo(null);
