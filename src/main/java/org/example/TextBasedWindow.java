@@ -33,6 +33,15 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite {
     private JTextArea mainTextArea;
     private JButton goToSettingsButton;
     private JButton uploadFileButton;
+
+
+    String textToLoad;
+
+    // Text generation variables
+    char[] keyInputs = "abcdefghijklmnopqrstuvwxyzåäö".toCharArray(); // List över de tangenter vi vill ska generera kod/text i vårat programm
+    int generationSpeed = Integer.parseInt(ConfigRead(Main.configPath,"currentSpeed")); // Antalet tecken som ska generaras vid varje knapptryckning
+    int charactersWritten = 0; // Vi behöver något som räknar hur mycket text vi redan skrivit ut så vi kan fortsätta att generera text där vi slutade
+
     private JButton enterTextButton;
     public TextBasedWindow() {
         setContentPane(panel1);
@@ -58,8 +67,6 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite {
                 textToLoad = readFileAsString(String.valueOf(filePath)); // Select the new file as the textToLoad
             }
         });
-        // Todo - Decide whether to implement this or remove it entirely
-        enterTextButton.addActionListener(e -> System.out.println("Should it be an option to just enter a copied text?"));
 
         // KeyListener, to listen when we press keys on our keyboard
         mainTextArea.addKeyListener(new KeyAdapter() {
