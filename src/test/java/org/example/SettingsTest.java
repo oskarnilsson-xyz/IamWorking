@@ -98,5 +98,6 @@ class SettingsTest {
         assertEquals(Color.pink, textWindow.getPanel1().getBackground());
         assertEquals(Color.pink, textWindow.getMainTextArea().getBackground());
 
+
     }
 }
