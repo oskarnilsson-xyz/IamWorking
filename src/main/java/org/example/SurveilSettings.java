@@ -60,7 +60,7 @@ public class SurveilSettings extends JFrame implements ConfigReadWrite{
             surveilensWindow.dispose();
             dispose();
         });
-        confirmButton3.addActionListener(e -> {
+        confirmButton3.addActionListener(e -> { //
             setVisible(false);
             try {
                 surveilensWindow.SetHead();
