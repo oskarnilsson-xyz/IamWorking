@@ -12,11 +12,6 @@ public class SurveilWindow extends JFrame implements ConfigReadWrite {
     String[] animalCamArray = {"animalCam1", "animalCam2", "animalCam3", "animalCam4", "animalCam5", "animalCam6", "animalCam7", "animalCam8", "animalCam9", "animalCam10", "animalCam11", "animalCam12"};
     String[] nationCamArray = {"nationCam1", "nationCam2", "nationCam3", "nationCam4", "nationCam5", "nationCam6", "nationCam7", "nationCam8", "nationCam9", "nationCam10", "nationCam11", "nationCam12"};
     private JButton cam1Button;
-
-    public JPanel getSurveilWindowPanel() {
-        return surveilWindowPanel;
-    }
-
     private JPanel surveilWindowPanel;
     private JLabel cam1Feed;
     private JLabel cam1Head;
