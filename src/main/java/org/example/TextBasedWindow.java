@@ -45,10 +45,8 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite {
         setIconImage(foxImage.getImage());
         SetTextWindowFromConfig();
 
+        goToSettingsButton.addActionListener(e -> Manager.TextSettingsWindow());
 
-        goToSettingsButton.addActionListener(e -> {
-            Manager.TextSettingsWindow(); // :)
-        });
         uploadFileButton.addActionListener(e -> { // On button click, import a text file to generate text from
             JFileChooser fileChooser = new JFileChooser();
             FileNameExtensionFilter textFilter = new FileNameExtensionFilter("TEXT FILES", "txt", "text"); // Skapar ett filter som gör att vi bara kan läsa in textfiler
@@ -59,9 +57,7 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite {
                 textToLoad = readFileAsString(String.valueOf(filePath)); // Select the new file as the textToLoad
             }
         });
-
-        // KeyListener, to listen when we press keys on our keyboard
-        mainTextArea.addKeyListener(new KeyAdapter() {
+        mainTextArea.addKeyListener(new KeyAdapter() {// KeyListener, to listen when we press keys on our keyboard
             @Override
             public void keyTyped(KeyEvent e) { // e är våran knapptryckning, e.getKeyChar använder vi för att se tecken det är på tangenten vi tryckte på.
                 /* Nedan sker följande:
@@ -80,9 +76,7 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite {
             }
         });
     }
-
-    // Read text from file
-    public String readFileAsString(String fileName) {
+    public String readFileAsString(String fileName) {// Read text from file
         try {
             String data;
             data = new String(Files.readAllBytes(Paths.get(fileName)));
@@ -94,7 +88,6 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite {
             throw new RuntimeException(e);
         }
     }
-
     public void SetTextWindowFromConfig() { //Uppdaterar alla inställningar från current i config
         panel1.setBackground(ConfigColorFinder("currentBackgroundcolor"));
         mainTextArea.setBackground(ConfigColorFinder("currentBackgroundcolor"));
@@ -102,6 +95,5 @@ public class TextBasedWindow extends JFrame implements ConfigReadWrite {
         generationSpeed = Integer.parseInt(ConfigRead(Main.configPath, "currentSpeed"));
         textToLoad = readFileAsString(ConfigRead(Main.configPath, (ConfigRead(Main.configPath, "currentFileText"))));
         mainTextArea.setFont(new Font(ConfigRead(Main.configPath, "currentFont"), Font.PLAIN, Integer.parseInt(ConfigRead(Main.configPath, "currentTextSize"))));
-
     }
 }

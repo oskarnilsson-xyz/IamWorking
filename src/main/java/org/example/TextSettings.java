@@ -54,7 +54,7 @@ public class TextSettings extends JFrame implements ActionListener, ConfigReadWr
         ConfigButton();// Detta ger oss möjligheten att ändra på knapparnas utseende och funktionalitet
         writingSpeed.setValue(Integer.parseInt(ConfigRead(Main.configPath, "currentSpeed"))); // gör så att sliders hänger med config-fil
         fontsize.setValue(Integer.parseInt(ConfigRead(Main.configPath, "currentTextSize")));
-        //------------------------Button Funktion-------------------------------
+        //------------------------Buttons-------------------------------
         goBack.addActionListener(this); //istället för detta går de att använda en lambda expprestion(e -> "de som ska göras")
         confirmButton.addActionListener(this);
         buttonBG1.addActionListener(this);
