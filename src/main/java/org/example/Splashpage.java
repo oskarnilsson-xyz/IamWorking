@@ -15,7 +15,6 @@ public class Splashpage extends JFrame {
     public Splashpage() {
         setContentPane(splashpagePanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
-
         setTitle("I am working");
         setSize(720, 400);
         setResizable(false);

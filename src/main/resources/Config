@@ -1,4 +1,4 @@
-#Thu Dec 08 20:52:22 CET 2022
+#Fri Dec 09 12:52:43 CET 2022
 hackerText=src/main/resources/files/hackerText
 fileGraphic3=fox23.txt
 fileGraphic2=fox22.txt
@@ -8,7 +8,7 @@ font1=Arial
 font3=Source Code Pro
 currentFileText=hackerText
 animalCam12=src/main/resources/cams/animalcams/wolfpath.gif
-currentTextSize=18
+currentTextSize=20
 animalCam11=src/main/resources/cams/animalcams/waterhole2.gif
 programmerText=src/main/resources/files/programmingText.txt
 animalCam10=src/main/resources/cams/animalcams/waterhole1.gif
@@ -22,7 +22,7 @@ nationCam5=src/main/resources/cams/nationcams/italy.gif
 currentFont=Times New Roman
 nationCam4=src/main/resources/cams/nationcams/germany.gif
 currentSpeed=4
-currentCamFeed=Nation
+currentCamFeed=Animal
 nationCam9=src/main/resources/cams/nationcams/norway.gif
 nationCam8=src/main/resources/cams/nationcams/netherlands.gif
 backgroundcolor2=Black
@@ -60,4 +60,4 @@ nationCam11=src/main/resources/cams/nationcams/spain.gif
 textColor2=Green
 textColor3=Black
 nationCam10=src/main/resources/cams/nationcams/serbia.gif
-currentBackgroundcolor=javax.swing.colorchooser.DefaultColorSelectionModel@141cb4ac
+currentBackgroundcolor=Pink
