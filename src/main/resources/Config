@@ -1,4 +1,4 @@
-#Thu Dec 08 20:52:22 CET 2022
+
 hackerText=src/main/resources/files/hackerText
 fileGraphic3=fox23.txt
 fileGraphic2=fox22.txt
@@ -19,7 +19,7 @@ nationCam1=src/main/resources/cams/nationcams/croatia.gif
 nationCam7=src/main/resources/cams/nationcams/lithuania.gif
 nationCam6=src/main/resources/cams/nationcams/latvia.gif
 nationCam5=src/main/resources/cams/nationcams/italy.gif
-currentFont=Times New Roman
+currentFont=Source Code Pro
 nationCam4=src/main/resources/cams/nationcams/germany.gif
 currentSpeed=4
 currentCamFeed=Nation

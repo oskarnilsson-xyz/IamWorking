@@ -2,20 +2,24 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.util.Scanner;
 
-public class GraphicInterface extends JFrame {
+public class GraphicInterface extends JFrame  {
+    public GraphicInterface(boolean testVersion){}
+    String input1 ;
     ImageIcon i = new ImageIcon("src/main/resources/img4.gif");
     ImageIcon j = new ImageIcon("src/main/resources/dynamic.gif");
-
     private JPanel panel1;
     public JPanel getPanel1() {
         return panel1;
     }
     private JButton doStuffButton1;
-    private JLabel ilabel;
+    public JLabel ilabel;
     private JButton doStuffButton2;
+    private JPasswordField passwordField1;
+
+    private JTextField textField1;
     private JButton settingButton;
 
     public JPanel getPanel2() {
@@ -36,27 +40,28 @@ public class GraphicInterface extends JFrame {
         setResizable(false);
         setIconImage(foxImage.getImage());
         Component doStuff;
+        this.add(textField1);
+        this.add(passwordField1);
         pack();
         doStuffButton1.addActionListener(new ActionListener() {
-            /**
-             * @param e the event to be processed
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                ilabel.setIcon(i);
+                setIcon(i);
             }
         });
         doStuffButton2.addActionListener(new ActionListener() {
-            /**
-             * @param e the event to be processed
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                ilabel.setIcon(j);
+                setIcon(j);
             }
         });
-        settingButton.addActionListener(e -> {
-            Manager.GraphicSettingsWindow();
-        });
+        SettingsButton.addActionListener(e -> Manager.GraphicSettingsWindow());
+
+        //public String getText(String input)
+    } public void setIcon(ImageIcon imageicon){
+        ilabel.setIcon(imageicon);
     }
+
 }
