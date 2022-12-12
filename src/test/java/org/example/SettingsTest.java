@@ -21,7 +21,7 @@ class SettingsTest {
     void readConfigFilenameIsNull() {
         TextSettings settings = new TextSettings();
         Assertions.assertThrows(RuntimeException.class, () -> {
-            settings.ReadConfig(null, "fox");
+            settings.ConfigRead(null, "fox");
 
         });
 
@@ -29,7 +29,7 @@ class SettingsTest {
     void readConfigSettingTypeIsNull() {
         TextSettings settings = new TextSettings();
         Assertions.assertThrows(RuntimeException.class, () -> {
-            settings.ReadConfig("src/main/resources/Config", null);
+            settings.ConfigRead("src/main/resources/Config", null);
 
         });
 
@@ -38,7 +38,7 @@ class SettingsTest {
     @RepeatedTest(5)
     void readConfigReturnsString() {
         TextSettings settings = new TextSettings();
-        assertEquals("1", settings.ReadConfig("src/main/resources/Config", "speed1"));
+        assertEquals("1", settings.ConfigRead("src/main/resources/Config", "speed1"));
 
 
     }
@@ -46,7 +46,7 @@ class SettingsTest {
     @RepeatedTest(5)
     void readConfigFailsReturnString() {
         TextSettings settings = new TextSettings();
-        assertNull(settings.ReadConfig("src/main/resources/Config", "speed25"));
+        assertNull(settings.ConfigRead("src/main/resources/Config", "speed25"));
 
 
     }
@@ -55,14 +55,14 @@ class SettingsTest {
     void writeConfig() {
         TextSettings settings = new TextSettings();
         Assertions.assertThrows(RuntimeException.class, () -> {
-            settings.WriteConfig(null, "fox", "fox");
+            settings.ConfigWrite(null, "fox", "fox");
         });
     }
     @RepeatedTest(5)
     void writeConfigSettingTypeIsNull() {
         TextSettings settings = new TextSettings();
         Assertions.assertThrows(RuntimeException.class, () -> {
-            settings.WriteConfig("src/main/resources/Config", null, "fox");
+            settings.ConfigWrite("src/main/resources/Config", null, "fox");
         });
 
     }
@@ -70,19 +70,19 @@ class SettingsTest {
     void writeConfigWriteValueIsNull() {
         TextSettings settings = new TextSettings();
         Assertions.assertThrows(RuntimeException.class, () -> {
-            settings.WriteConfig("src/main/resources/Config", "currentTextColor", null);
+            settings.ConfigWrite("src/main/resources/Config", "currentTextColor", null);
         });
     }
 
     @RepeatedTest(5)
     void writeConfigWritesString() {
         TextSettings settings = new TextSettings();
-        if (!settings.ReadConfig("src/main/resources/Config", "currentTextColor").equals("Green")) {
-            settings.WriteConfig("src/main/resources/Config", "currentTextColor", "Green");
-            assertEquals("Green", settings.ReadConfig("src/main/resources/Config", "currentTextColor"));
+        if (!settings.ConfigRead("src/main/resources/Config", "currentTextColor").equals("Green")) {
+            settings.ConfigWrite("src/main/resources/Config", "currentTextColor", "Green");
+            assertEquals("Green", settings.ConfigRead("src/main/resources/Config", "currentTextColor"));
         } else {
-            settings.WriteConfig("src/main/resources/Config", "currentTextColor", "Black");
-            assertEquals("Black", settings.ReadConfig("src/main/resources/Config", "currentTextColor"));
+            settings.ConfigWrite("src/main/resources/Config", "currentTextColor", "Black");
+            assertEquals("Black", settings.ConfigRead("src/main/resources/Config", "currentTextColor"));
         }
     }
 
@@ -97,7 +97,6 @@ class SettingsTest {
         textSettings.setColor(mockEvent);
         assertEquals(Color.pink, textWindow.getPanel1().getBackground());
         assertEquals(Color.pink, textWindow.getMainTextArea().getBackground());
-
 
     }
 }

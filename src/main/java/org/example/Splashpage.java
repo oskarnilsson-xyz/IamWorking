@@ -12,8 +12,6 @@ public class Splashpage extends JFrame {
     private JButton graphicInterfaceButton;
     private JButton survielInterfaceButton;
 
-     //TODO lägg till bilder 
-    //TODO: Gå igenom public, private osv.
     public Splashpage() {
         setContentPane(splashpagePanel);
         setIconImage(foxImage.getImage()); // lägger till iconen till fönstret
